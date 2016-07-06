@@ -6,7 +6,6 @@
   "scripts": {
     "test": "mocha",
     "postinstall": "bower cache clean && bower install",
-    "start": "node server.js"
   },
   "repository": {
     "type": "git",
