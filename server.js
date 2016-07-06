@@ -17,7 +17,14 @@ var config = require('./config')
   , server = app.listen(config.port)
   , mongoose  = require('mongoose')
 
-mongoose.connect(config.db);
+// mongoose.connect(config.db);
+
+//config files 
+mongoose.connect(
+  process.env.MONGOLAB_URI ||
+  process.env.MONGOHQ_URL ||
+  'mongodb://localhost/peckbox'
+);
 
 app.use("/", express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
