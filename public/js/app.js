@@ -124,7 +124,7 @@ angular.module('peckbox', ['peckbox.services',
       if ($window.location.host == 'localhost:1337') {
         console.log('development app');
         $authProvider.facebook({        
-          clientId: '1603892236604415',
+          clientId: '202500220147892',
         });
         $authProvider.google({
           clientId: '443314981286-hij2tse2619ppccl6ar7qom10jt3ci0p.apps.googleusercontent.com',
@@ -132,7 +132,7 @@ angular.module('peckbox', ['peckbox.services',
       } else {
         console.log('production app');
         $authProvider.facebook({        
-          clientId: '1603892236604415',
+          clientId: '202500220147892',
         });
         $authProvider.google({
           clientId: '443314981286-hij2tse2619ppccl6ar7qom10jt3ci0p.apps.googleusercontent.com',
