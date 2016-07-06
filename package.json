@@ -1,11 +1,12 @@
 {
-  "name": "basic-auth",
+  "name": "peckbox",
   "version": "1.0.0",
   "description": "Auth skeleton for MEAN stack.",
   "main": "server.js",
   "scripts": {
     "test": "mocha",
     "postinstall": "bower cache clean && bower install",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
