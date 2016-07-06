@@ -1,6 +1,6 @@
-var port = 3001;
+// var port = 3001;
 
-module.exports = {
-  port: port,
-  db: 'mongodb://localhost/peckbox'
-};
+// module.exports = {
+//   port: port,
+//   db: 'mongodb://localhost/peckbox'
+// };

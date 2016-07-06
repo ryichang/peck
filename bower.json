@@ -1,5 +1,5 @@
 {
-  "name": "peckbox",
+  "name": "basic-auth",
   "version": "1.0.0",
   "directory": "public/vendor",
   "dependencies": {
