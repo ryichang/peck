@@ -19,12 +19,8 @@ var config = require('./config')
 
 // mongoose.connect(config.db);
 
-//config files 
-mongoose.connect(
-  process.env.MONGOLAB_URI ||
-  process.env.MONGOHQ_URL ||
-  'mongodb://localhost/peckbox'
-);
+
+mongoose.connect(config.db);
 
 app.use("/", express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
