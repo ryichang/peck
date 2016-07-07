@@ -95,7 +95,7 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
         var lat = position.coords.latitude;
         var lon = position.coords.longitude;    
         var query = "lat=" + lat + "&lon=" + lon;
-        var url = "http://api.openweathermap.org/data/2.5/";
+        var url = "https://api.openweathermap.org/data/2.5/";
         var unit = "&units=imperial";
         var key = "&appid=c55ec823be46f88fbcf55db70cc8e772";
         $http.jsonp(url+ "weather?" + query + unit + key + "&callback=JSON_CALLBACK").success(function(response){
