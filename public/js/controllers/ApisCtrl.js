@@ -30,7 +30,7 @@ angular.module('peckbox')
   $scope.types = ['hot'];         
   $scope.subredit="worldnews";      
   $scope.type="top";
-  var url="http://api.reddit.com/r/"+$scope.subredit+"/?jsonp=JSON_CALLBACK";
+  var url="https://api.reddit.com/r/"+$scope.subredit+"/?jsonp=JSON_CALLBACK";
   $http.jsonp(url).success(function(data) {
     $scope.elements = [];
     var dataset = data.data.children;
@@ -40,7 +40,7 @@ angular.module('peckbox')
         }       
       });
 
-var api = 'http://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb58d5412a54799e82ad086c0387669:5:74719242&responce-format=.jsonp&callback=JSON_CALLBACK'; 
+var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb58d5412a54799e82ad086c0387669:5:74719242&responce-format=.jsonp&callback=JSON_CALLBACK'; 
                 $http.jsonp(api).success(function(data){
                     // console.log('response', data)
                     $scope.news = data.results;
