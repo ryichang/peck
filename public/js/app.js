@@ -127,7 +127,7 @@ angular.module('peckbox', ['peckbox.services',
           clientId: '202500220147892',
         });
         $authProvider.google({
-          clientId: '443314981286-hij2tse2619ppccl6ar7qom10jt3ci0p.apps.googleusercontent.com',
+          clientId: '244786553723-b9kn0lleakk061ggih9ji1cihcgsh0a3.apps.googleusercontent.com',
         });
       } else {
         console.log('production app');
@@ -135,7 +135,7 @@ angular.module('peckbox', ['peckbox.services',
           clientId: '202500220147892',
         });
         $authProvider.google({
-          clientId: '443314981286-hij2tse2619ppccl6ar7qom10jt3ci0p.apps.googleusercontent.com',
+          clientId: '244786553723-b9kn0lleakk061ggih9ji1cihcgsh0a3.apps.googleusercontent.com',
         });
       }
     
