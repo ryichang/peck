@@ -92,6 +92,7 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
     navigator.geolocation.getCurrentPosition(function(position){
       $scope.$apply(function(){
         $scope.position = position;
+        console.log('position is', position);
         var lat = position.coords.latitude;
         var lon = position.coords.longitude;    
         var query = "lat=" + lat + "&lon=" + lon;
