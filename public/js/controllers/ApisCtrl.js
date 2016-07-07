@@ -101,7 +101,24 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
       });
     });
   }
-  http://api.wunderground.com/api/df7130ecdd31c499/geolookup/q/37.776289,-122.395234.json
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position){
+      $scope.$apply(function(){
+        $scope.position = position;
+        console.log('position is', position);
+        var lat = position.coords.latitude;
+        var lon = position.coords.longitude;    
+        var query = "lat=" + lat + "&lon=" + lon;
+        var url ="https://api.forecast.io/forecast/"
+        var key = "39361e88cf2b3005a2f1fbf44252801b/"
+        $http.jsonp(url + key + lat + "," + lon + "?callback=JSON_CALLBACK").success(function(response){
+          $scope.weather = response;
+          console.log('ApiCtrl', $scope.weather)
+        });
+      });
+    });
+  }
 
 
   //   if (navigator.geolocation) {

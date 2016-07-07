@@ -60,8 +60,8 @@
 
   <div class="weather" ng-controller="ApisCtrl">
      <p2 ng-show="currentUser">{{location.location.city}}</p2>
-     <p2 ng-show="currentUser">{{weather.weather[0].description}} </p2>
-     <p2 ng-show="currentUser">{{weather.main.temp}}° </p2>
+     <p2 ng-show="currentUser">{{weather.currently.summary}} </p2>
+     <p2 ng-show="currentUser">{{weather.currently.temperature}}° </p2>
   </div>
 
   </div>
