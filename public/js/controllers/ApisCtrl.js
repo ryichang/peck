@@ -97,7 +97,8 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
         var query = "lat=" + lat + "&lon=" + lon;
         var url = "https://api.openweathermap.org/data/2.5/";
         var unit = "&units=imperial";
-        var key = "&appid=c55ec823be46f88fbcf55db70cc8e772/";
+        var key = "&appid=325eb4a6e7af80ea40b557e093f01b04";
+        // var key = "&appid=c55ec823be46f88fbcf55db70cc8e772/";
         $http.jsonp(url+ "weather?" + query + unit + key + "&callback=JSON_CALLBACK").success(function(response){
           $scope.weather = response;
           console.log('ApiCtrl', $scope.weather)
