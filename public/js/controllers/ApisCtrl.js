@@ -95,8 +95,8 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
         var url = "https://api.wunderground.com/api/df7130ecdd31c499/geolookup/q/";
      
         $http.jsonp(url + query + ".json" +"?callback=JSON_CALLBACK").success(function(response){
-          $scope.weather = response;
-          console.log('ApiCtrl', $scope.weather)
+          $scope.location = response;
+          console.log('ApiCtrl', $scope.location)
         });
       });
     });
