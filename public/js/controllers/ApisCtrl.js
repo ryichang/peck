@@ -91,8 +91,8 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
         console.log('position is', position);
         var lat = position.coords.latitude;
         var lon = position.coords.longitude;    
-        var query = "lat+" + lat + "long+" + lon;
-        var url = "https://www.wolframalpha.com/input/?i=current+temperature+at+";
+        var query = lat + "," + lon;
+        var url = "https://api.wunderground.com/api/df7130ecdd31c499/geolookup/q/";
      
         $http.jsonp(url + query + "&callback=JSON_CALLBACK").success(function(response){
           $scope.weather = response;
@@ -102,7 +102,7 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
     });
   }
 
-
+http://api.wunderground.com/api/df7130ecdd31c499/geolookup/q/37.776289,-122.395234.json
 
   //   if (navigator.geolocation) {
   //   navigator.geolocation.getCurrentPosition(function(position){
