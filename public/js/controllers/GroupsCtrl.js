@@ -210,7 +210,7 @@ angular.module('peckbox')
       .success(function(response){
         toastr.success('You have successfully joined a group!');
             console.log('response', response);
-            $scope.group.users.unshift(response.users[0].displayName);
+            // $scope.group.users.unshift(response.users[0].displayName);
              // $scope.group.users.unshift(response.users[0]);
              $window.location.reload();
             
