@@ -108,7 +108,7 @@ h1, h2, h3, h4, h5 {
   /*color: #fff;*/
 }
 h1 { font-size: 72px; color: #fff; }
-h2 { font-size: 40px; font-weight: 400; color: #fff; font-family: "OSWALD";}
+h2 { font-size: 40px; font-weight: 400; color: #fff;}
 h3 { 
 /*  background-color: #000;
   color: #fff;*/
@@ -1073,6 +1073,7 @@ textarea.form-control:focus {
 }
 
 a {
+  font-family: "OSWALD";
   color: #fff;
   text-decoration: none;
   transition-duration: .3s;
