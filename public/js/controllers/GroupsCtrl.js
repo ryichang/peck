@@ -129,6 +129,58 @@ angular.module('peckbox')
   .controller('GroupShowCtrl', ['$scope', '$http', '$auth', 'Auth', '$location', '$routeParams', 'toastr', 'Group', 'Event','$window','$q', function($scope, $http, $auth, Auth, $location, $routeParams, toastr, Group, Event, $window, $q) {
     $http.get('/api/me').success(function(data) {
       $scope.user = data;
+      Group.get({ id: $routeParams.id }, function(group) {
+        $scope.group = group;
+        $scope.comment = group.comments;
+        $scope.event = group.events;
+        console.log('outside', group);
+        var users = $scope.group.users
+       
+        if ($scope.group.owner == $scope.user._id){
+           $scope.Owner = true
+           console.log('owner', $scope.Owner) 
+         }else {
+           $scope.Owner = false
+           console.log('false', $scope.Owner)
+         }
+
+        for (var user in users){
+          console.log('users[user] id is', users[user]._id)
+          if(users[user]._id == $scope.user._id){
+            $scope.userFound = true;
+            console.log('userFound is', $scope.userFound)
+            break;
+          } else {
+            $scope.userFound = false;
+            console.log('userFound is', $scope.userFound)
+          }
+        }
+
+
+      // for (var user in users){
+      //   console.log('user is', user)
+      //   console.log('users are', users)
+      //   if(users[user] == $scope.user._id){
+      //     $scope.userFound = true;
+      //     break;
+      //   } else {
+      //     $scope.userFound = false;
+      //   }
+      // }
+
+      // for (var userIndex in users) {
+      //     console.log('userIndex is', users[userIndex])
+      //     console.log('user Id is', $scope.user._id)
+      //     if (users[userIndex] == $scope.user._id){
+      //       $scope.userFound = true;
+      //        console.log('userFound is', $scope.userFound)
+      //        break;
+      //     } else {
+      //       $scope.userFound = false;
+      //       console.log('userFound is', $scope.userFound)
+      //     }
+      // }
+      });
 
     });
 
@@ -140,58 +192,7 @@ angular.module('peckbox')
          $window.history.back();
       };
 
-    Group.get({ id: $routeParams.id }, function(group) {
-      $scope.group = group;
-      $scope.comment = group.comments;
-      $scope.event = group.events;
-      console.log('outside', group);
-      var users = $scope.group.users
-     
-      if ($scope.group.owner == $scope.user._id){
-         $scope.Owner = true
-         console.log('owner', $scope.Owner) 
-       }else {
-         $scope.Owner = false
-         console.log('false', $scope.Owner)
-       }
-
-      for (var user in users){
-        console.log('users[user] id is', users[user]._id)
-        if(users[user]._id == $scope.user._id){
-          $scope.userFound = true;
-          console.log('userFound is', $scope.userFound)
-          break;
-        } else {
-          $scope.userFound = false;
-          console.log('userFound is', $scope.userFound)
-        }
-      }
-
-
-    // for (var user in users){
-    //   console.log('user is', user)
-    //   console.log('users are', users)
-    //   if(users[user] == $scope.user._id){
-    //     $scope.userFound = true;
-    //     break;
-    //   } else {
-    //     $scope.userFound = false;
-    //   }
-    // }
-
-    // for (var userIndex in users) {
-    //     console.log('userIndex is', users[userIndex])
-    //     console.log('user Id is', $scope.user._id)
-    //     if (users[userIndex] == $scope.user._id){
-    //       $scope.userFound = true;
-    //        console.log('userFound is', $scope.userFound)
-    //        break;
-    //     } else {
-    //       $scope.userFound = false;
-    //       console.log('userFound is', $scope.userFound)
-    //     }
-    // }
-    });
+    
 
     
 

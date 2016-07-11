@@ -1073,7 +1073,7 @@ textarea.form-control:focus {
 }
 
 a {
-  font-family: "OSWALD" !important;
+/*  font-family: "OSWALD" !important;*/
   color: #fff;
   text-decoration: none;
   transition-duration: .3s;
