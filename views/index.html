@@ -24,7 +24,17 @@
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
     <!-- favicon -->
     <link rel="icon" href="/img/favicon1.ico">
-     
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-47887295-4', 'auto');
+      ga('send', 'pageview');
+
+    </script>
     
   </head>
   <body ng-controller="MainCtrl">
@@ -54,27 +64,16 @@
     <ng-include src="'templates/navbar'"></ng-include>
     <div ng-view="ng-view"></div>
 
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-47887295-4', 'auto');
-      ga('send', 'pageview');
-
-    </script>
 
     <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-  <!--   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script> -->
     <script type="text/javascript" src="/vendor/angular/angular.js"></script>
     <script type="text/javascript" src="/vendor/angular-resource/angular-resource.js"></script>
     <script type="text/javascript" src="/vendor/angular-route/angular-route.js"></script>
     <script type="text/javascript" src="/vendor/angular-cookies/angular-cookies.min.js"></script>
-<!--     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-animate.js"></script> -->
     <script type="text/javascript" src="/vendor/moment/moment.js"></script>
     <script type="text/javascript" src="/vendor/angular-moment/angular-moment.js"></script>
     <script type="text/javascript" src="/vendor/satellizer/satellizer.min.js"></script>
@@ -83,8 +82,6 @@
     <script type="text/javascript" src="/vendor/angular-toastr/dist/angular-toastr.tpls.js"></script>
     <!-- GOOGLE PLACES -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA80h113ylyvLJcCwkxv1b1AOk6hXEZCyA&libraries=places"></script>
-    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script> -->
-    <!-- AIzaSyDx3kQqGSkl_GbPayrDbkUCRJjy12xxlwQ& -->
     <script type="text/javascript" src="/vendor/angular-google-places-autocomplete/src/autocomplete.js"></script>
     <link rel="stylesheet" href="/vendor/angular-google-places-autocomplete/src/autocomplete.css">
     <!-- NG MAP -->
@@ -96,24 +93,18 @@
     <!-- Ticker --> 
     <link rel="stylesheet" href="/vendor/angular-ticker/release/ticker.css">
     <script src="/vendor/angular-ticker/release/ticker.js"></script>
-
     <!-- Angular Material requires Angular.js Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
-    
     <!--Loading bar-->  
     <link rel='stylesheet' href='/vendor/angular-loading-bar/build/loading-bar.css' type='text/css' media='all' />
     <script type='text/javascript' src='/vendor/angular-loading-bar/build/loading-bar.js'></script>
     <!-- FULLSCREEN --> 
     <script type="text/javascript" src="/vendor/angular-screenfull/dist/angular-screenfull.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/screenfull.js/2.0.0/screenfull.js"></script>
-
-
-    
-      <!-- Angular Material Library -->
-      <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
-
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
 
     <script type="text/javascript" src="/js/app.js"></script>
     <script type="text/javascript" src="/js/services.js"></script>

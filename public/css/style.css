@@ -241,51 +241,6 @@ pointer-events:none;
   }
 }
 
-.background {
-  background: transparent url(/img/background.png) repeat 5% 5%;
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: -100;
-  -webkit-animation: STAR-MOVE 200s linear infinite;
-}
-.fast .background{
-  -webkit-animation: STAR-MOVE 10s linear infinite;
-}
-
-.midground {
-  background: url(/img/midground.png) repeat 20% 20%;
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: 200; 
-  -webkit-animation: STAR-MOVE 150s linear infinite;
-}
-.fast .midground{
-  -webkit-animation: STAR-MOVE 7.5s linear infinite;
-}
-.foreground {
-  background: url(/img/foreground.png) repeat 35% 35%;
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: 300;
-    -webkit-animation: STAR-MOVE 100s linear infinite;
-}
-.fast .foreground{
-  -webkit-animation: STAR-MOVE 5.0s linear infinite;
-}
-
-.shadow{
-display: block;
-position: relative;
-width: 80px;
-height: 8px;
-background: rgba(87, 168, 184, 0.57);
-top: 60px;
-border-radius: 10px;
-left: 5%;
-  @include transition(all 1.0s ease);
-opacity: 0.75;
-  -webkit-filter:blur(0px);  
-}
 
 
 .navbar-right {
@@ -311,10 +266,6 @@ a {
 }
 
 #red {
-  /*color: #fff;*/
- /* background: rgba(244,137,137,1);*/
- /*background: rgba(253,100,103,1);*/
-/*  background: rgba(242,93,95,1);*/
   background: rgba(247,73,86,1);
  /*  animation: pulsate 3s infinite;*/
  /* -webkit-animation: blinker 1s infinite;
@@ -970,7 +921,6 @@ svg.close-btn {
   content: counter(code,decimal-leading-zero);
   float: left;
   width: 40px;
- /* padding: 0 5px;*/
   margin-right: 10px;
   display: inline-block;
   box-shadow: inset 0 -1px #000;
@@ -989,15 +939,6 @@ svg.close-btn {
 }
 */
 
-/*@import url(http://fonts.googleapis.com/css?family=Oswald:400,700,300);
-html, body {
-  margin: 0;
-  padding: 0;
-  color: #eaeaea;
-  overflow: hidden;
-  background: teal;
-  font-family: "Oswald";
-}*/
 
 #search {
   max-width: 250px;
@@ -1007,11 +948,9 @@ html, body {
 .clock {
   font-family: "Yeezyb";
   position: relative;
-/*  right: 60px;*/
   text-align: center;
   color: #fff;
   font-size: 16px;
- /* text-shadow: 1px 1px 0px #ca0000,1px 1px 0px #ca0000,2px 2px 0px #c90000,2px 2px 0px #c90000,3px 3px 0px #c70000,3px 3px 0px #c70000,4px 4px 0px #c50000,4px 4px 0px #c50000,5px 5px 0px #c40000,5px 5px 0px #c40000,6px 6px 0px #c20000,6px 6px 0px #c20000,7px 7px 0px #c10000,7px 7px 0px #c10000,8px 8px 0px #bf0000,8px 8px 0px #bf0000,9px 9px 0px #bd0000,9px 9px 0px #bd0000,10px 10px 0px #bc0000,10px 10px 0px #bc0000,11px 11px 0px #ba0000,11px 11px 0px #ba0000,12px 12px 0px #b80000,12px 12px 0px #b80000,13px 13px 0px #b70000,13px 13px 0px #b70000,14px 14px 0px #b50000,14px 14px 0px #b50000,15px 15px 0px #b40000,15px 15px 0px #b40000,16px 16px 0px #b20000,16px 16px 0px #b20000,17px 17px 0px #b00000,17px 17px 0px #b00000,18px 18px 0px #af0000,18px 18px 0px #af0000,19px 19px 0px #ad0000,19px 19px 0px #ad0000,20px 20px 0px #ab0000,20px 20px 0px #ab0000,21px 21px 0px #aa0000,21px 21px 0px #aa0000,22px 22px 0px #a80000,22px 22px 0px #a80000,23px 23px 0px #a60000,23px 23px 0px #a60000,24px 24px 0px #a50000,24px 24px 0px #a50000,25px 25px 0px #a30000,25px 25px 0px #a30000,26px 26px 0px #a20000,26px 26px 0px #a20000,27px 27px 0px #a00000,27px 27px 0px #a00000,28px 28px 0px #9e0000,28px 28px 0px #9e0000,29px 29px 0px #9d0000,29px 29px 0px #9d0000,30px 30px 0px #9b0000,30px 30px 0px #9b0000,31px 31px 0px #990000,31px 31px 0px #990000,32px 32px 0px #980000,32px 32px 0px #980000,33px 33px 0px #960000,33px 33px 0px #960000,34px 34px 0px #950000,34px 34px 0px #950000,35px 35px 0px #930000,35px 35px 0px #930000,36px 36px 0px #910000,36px 36px 0px #910000,37px 37px 0px #900000,37px 37px 0px #900000,38px 38px 0px #8e0000,38px 38px 0px #8e0000,39px 39px 0px #8c0000,39px 39px 0px #8c0000,40px 40px 0px darkred,40px 40px 0px darkred,41px 41px 0px #890000,41px 41px 0px #890000,42px 42px 0px #870000,42px 42px 0px #870000,43px 43px 0px #860000,43px 43px 0px #860000,44px 44px 0px #840000,44px 44px 0px #840000,45px 45px 0px #830000,45px 45px 0px #830000,46px 46px 0px #810000,46px 46px 0px #810000,47px 47px 0px #7f0000,47px 47px 0px #7f0000,48px 48px 0px #7e0000,48px 48px 0px #7e0000,49px 49px 0px #7c0000,49px 49px 0px #7c0000,50px 50px 0px #7a0000,50px 50px 0px #7a0000,51px 51px 0px #790000,51px 51px 0px #790000,52px 52px 0px #770000,52px 52px 0px #770000,53px 53px 0px #760000,53px 53px 0px #760000,54px 54px 0px #740000,54px 54px 0px #740000,55px 55px 0px #720000,55px 55px 0px #720000,56px 56px 0px #710000,56px 56px 0px #710000,57px 57px 0px #6f0000,57px 57px 0px #6f0000,58px 58px 0px #6d0000,58px 58px 0px #6d0000,59px 59px 0px #6c0000,59px 59px 0px #6c0000,60px 60px 0px #6a0000,60px 60px 0px #6a0000,61px 61px 0px #680000,61px 61px 0px #680000,62px 62px 0px #670000,62px 62px 0px #670000,63px 63px 0px #650000,63px 63px 0px #650000,64px 64px 0px #640000,64px 64px 0px #640000,65px 65px 0px #620000,65px 65px 0px #620000,66px 66px 0px #600000,66px 66px 0px #600000,67px 67px 0px #5f0000,67px 67px 0px #5f0000,68px 68px 0px #5d0000,68px 68px 0px #5d0000,69px 69px 0px #5b0000,69px 69px 0px #5b0000,70px 70px 0px #5a0000,70px 70px 0px #5a0000,71px 71px 0px #580000,71px 71px 0px #580000,72px 72px 0px #560000,72px 72px 0px #560000,73px 73px 0px #550000,73px 73px 0px #550000,74px 74px 0px #530000,74px 74px 0px #530000,75px 75px 0px #520000,75px 75px 0px #520000,76px 76px 0px #500000,76px 76px 0px #500000,77px 77px 0px #4e0000,77px 77px 0px #4e0000,78px 78px 0px #4d0000,78px 78px 0px #4d0000,79px 79px 0px #4b0000,79px 79px 0px #4b0000,80px 80px 0px #490000,80px 80px 0px #490000,81px 81px 0px #480000,81px 81px 0px #480000,82px 82px 0px #460000,82px 82px 0px #460000,83px 83px 0px #450000,83px 83px 0px #450000,84px 84px 0px #430000,84px 84px 0px #430000,85px 85px 0px #410000,85px 85px 0px #410000,86px 86px 0px #400000,86px 86px 0px #400000,87px 87px 0px #3e0000,87px 87px 0px #3e0000,88px 88px 0px #3c0000,88px 88px 0px #3c0000,89px 89px 0px #3b0000,89px 89px 0px #3b0000,90px 90px 0px #390000,90px 90px 0px #390000,91px 91px 0px #370000,91px 91px 0px #370000,92px 92px 0px #360000,92px 92px 0px #360000,93px 93px 0px #340000,93px 93px 0px #340000,94px 94px 0px #330000,94px 94px 0px #330000,95px 95px 0px #310000,95px 95px 0px #310000,96px 96px 0px #2f0000,96px 96px 0px #2f0000,97px 97px 0px #2e0000,97px 97px 0px #2e0000,98px 98px 0px #2c0000,98px 98px 0px #2c0000,99px 99px 0px #2a0000,99px 99px 0px #2a0000,100px 100px 0px #290000,100px 100px 0px #290000,101px 101px 0px #270000,101px 101px 0px #270000,102px 102px 0px #260000,102px 102px 0px #260000,103px 103px 0px #240000,103px 103px 0px #240000,104px 104px 0px #220000,104px 104px 0px #220000,105px 105px 0px #210000,105px 105px 0px #210000,106px 106px 0px #1f0000,106px 106px 0px #1f0000,107px 107px 0px #1d0000,107px 107px 0px #1d0000,108px 108px 0px #1c0000,108px 108px 0px #1c0000,109px 109px 0px #1a0000,109px 109px 0px #1a0000,110px 110px 0px #180000,110px 110px 0px #180000,111px 111px 0px #170000,111px 111px 0px #170000,112px 112px 0px #150000,112px 112px 0px #150000,113px 113px 0px #140000,113px 113px 0px #140000,114px 114px 0px #120000,114px 114px 0px #120000,115px 115px 0px #100000,115px 115px 0px #100000,116px 116px 0px #0f0000,116px 116px 0px #0f0000,117px 117px 0px #0d0000,117px 117px 0px #0d0000,118px 118px 0px #0b0000,118px 118px 0px #0b0000,119px 119px 0px #0a0000,119px 119px 0px #0a0000,120px 120px 0px #080000,120px 120px 0px #080000,121px 121px 0px #070000,121px 121px 0px #070000,122px 122px 0px #050000,122px 122px 0px #050000,123px 123px 0px #030000,123px 123px 0px #030000,124px 124px 0px #020000,124px 124px 0px #020000,125px 125px 0px black,125px 125px 0px black;*/
 }
 
 .hour {
@@ -1026,7 +965,7 @@ html, body {
 
 .seconds {
   letter-spacing: 2px;
-/*  margin-left: 50px;*/
+
 }
 
 .week {
@@ -1054,12 +993,7 @@ html, body {
   letter-spacing: 5px;
 }
 
-/*input.form-control {
-    border: 1px solid #000 !important;
-    padding-left: 20px;
-    box-shadow: inset 0 -1px 0 #000 !important;
-}
-*/
+
 input.form-control:focus {
     box-shadow: inset 0 -2px 0 #000 !important;
 }
