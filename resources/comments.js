@@ -58,7 +58,7 @@ module.exports = function(app) {
 					if(err) {
 						res.send(err);
 					} else {
-						res.status(200).send("comment is deleted", comment);
+						res.status(200).send("comment is deleted");
 						
 					}
 					
