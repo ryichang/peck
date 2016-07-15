@@ -152,8 +152,7 @@ function itsaclock(){
     var min  = m===0?'':' '+(m<33 ? mLabels[Math.round(m/5)] : mLabels[6-Math.round((m-30)/5)]);
     var approx = m%5===0?'':m%5>2?' nearly':' just after' ; 
     var topast = m%58<3 ? '' : m%60>32? ' to':' past';
-    clock.innerHTML= approx + min + topast + hour;
-    // clock.innerHTML= 'It\'s' + approx + min + topast + hour;
+    clock.innerHTML= 'It\'s' + approx + min + topast + hour;
     // clock.innerHTML='&#10077'+'It\'s' + approx + min + topast + hour +'&#10078';
     setTimeout(itsaclock, 1000);
 }
