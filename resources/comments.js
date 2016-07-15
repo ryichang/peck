@@ -43,7 +43,7 @@ module.exports = function(app) {
 	     });
 
 	app.delete('/api/notes/:note_id/comments/:comment_id', function(req, res) {
-		Comment.findByIdAndRemove({
+		Comment.remove({
 			_id : req.params.comment_id
 		 }, function(err, note) {
 			if (err)
