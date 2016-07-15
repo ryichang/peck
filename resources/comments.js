@@ -51,7 +51,7 @@ module.exports = function(app) {
 
 			// Delete Note in User
 			Note.findOneAndUpdate(
-				{ comments: req.params.comment_id},
+				{ "_id": req.params.note_id},
 				{ "$pull": {"comments": req.params.comment_id}},
 	
 				function (err, comment){
