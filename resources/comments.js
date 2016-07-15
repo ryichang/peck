@@ -42,29 +42,55 @@ module.exports = function(app) {
 	            });
 	     });
 
-	app.delete('/api/notes/:note_id/comments/:comment_id', function(req, res) {
-		Comment.remove({
-			_id : req.params.comment_id
-		 }, function(err, note) {
-			if (err)
-				res.send(err);
+	// app.delete('/api/notes/:note_id/comments/:comment_id', function(req, res) {
+	// 	Comment.findByIdAndRemove({
+	// 		_id : req.params.comment_id
+	// 	 }, function(err, note) {
+	// 		if (err)
+	// 			res.send(err);
 
-			// Delete Note in User
-			Note.findOneAndUpdate(
-				{ comments: req.params.comment_id},
-				{ "$pull": {"comments": req.params.comment_id}},
+	// 		// Delete Note in User
+	// 		Note.findOneAndUpdate(
+	// 			{ comments: req.params.comment_id},
+	// 			{ "$pull": {"comments": req.params.comment_id}},
 	
-				function (err, comment){
-					if(err) {
-						res.send(err);
-					} else {
-						res.status(200).send("comment is deleted", comment);
+	// 			function (err, comment){
+	// 				if(err) {
+	// 					res.send(err);
+	// 				} else {
+	// 					res.status(200).send("comment is deleted", comment);
 						
-					}
+	// 				}
 					
-				});
-			});
-	});
+	// 			});
+	// 		});
+	// });
+
+		app.delete('/api/notes/:note_id/comments/:comment_id', auth.ensureAuthenticated, function(req,res){
+			console.log('res is' , res);
+			Comment.remove({ _id: req.params.comment_id}, function (err, comment){
+	            if(err){
+	                console.log(err);
+	                return res.send(err);
+	            }
+
+	            Note.findOneAndUpdate(
+	                { "_id": req.params.note},
+	                { "$pull": {"comments": req.params.comment_id}},
+	                function (err, group){
+	                    if (err) {
+	                    	console.log("err is", err);
+	                    	return res.send(err);}
+	                    else {
+	                        console.log("Object Note Delete", group) ;
+	                        res.status(200).send('Finished Delete');
+	                    }
+	                });
+	        });
+
+		});
+
+
 
 	app.post('/api/post/:post_id/comments', auth.ensureAuthenticated, function (req, res){
 			// console.log("comment passed back", req.body)
