@@ -30,7 +30,7 @@ angular.module('peckbox')
   $scope.types = ['hot'];         
   $scope.subredit="worldnews";      
   $scope.type="top";
-  var url="//api.reddit.com/r/"+$scope.subredit+"/?jsonp";
+  var url="//api.reddit.com/r/"+$scope.subredit+"&callback=?JSON_CALLBACK";
   $http.jsonp(url).success(function(data) {
     $scope.elements = [];
     var dataset = data.data.children;
