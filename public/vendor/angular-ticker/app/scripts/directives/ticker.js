@@ -21,7 +21,7 @@ directive('ticker', function ($interval, $timeout) {
           timing = attributes.timing;
           timingEffect = timing / timingEffectDivideBy;
         } else {
-          timing = 5000;
+          timing = 4000;
           timingEffect = timing / timingEffectDivideBy / timingEffectDivideBy * 2;
         }
 
