@@ -36,7 +36,7 @@ angular.module('peckbox')
     var dataset = data.data.children;
     for (var i=0; i<dataset.length; i++ ){
           $scope.elements.push(dataset[i].data); // response data 
-          console.log('reddit', $scope.elements);
+          // console.log('reddit', $scope.elements);
         }       
       });
 
@@ -44,7 +44,7 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
                 $http.jsonp(api).success(function(data){
                     // console.log('response', data)
                     $scope.news = data.results;
-                    console.log('news scope is', $scope.news)
+                    // console.log('news scope is', $scope.news)
                 });
 
  // $http.jsonp(url)
@@ -114,7 +114,7 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
         var key = "598aeaa830f0e56213a7a3401ab14bf1/"
         $http.jsonp(url + key + lat + "," + lon + "?callback=JSON_CALLBACK").success(function(response){
           $scope.weather = response;
-          console.log('ApiCtrl', $scope.weather)
+          // console.log('ApiCtrl', $scope.weather)
         });
       });
     });
