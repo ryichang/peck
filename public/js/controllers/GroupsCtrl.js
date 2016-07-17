@@ -392,9 +392,9 @@ angular.module('peckbox')
       $http.post('/api/group/' + group._id + '/events', config)
       .success(function(response){
         toastr.success('Event has been successfully added in ' + group.title);
-        // console.log('response is', response);
+        console.log('event added is', response);
         $scope.group.events.unshift(response);
-        // console.log('group event is', group.events);
+        console.log('group event is', group.events);
       })
       .error(function(response){
        
