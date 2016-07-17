@@ -88,7 +88,7 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
     navigator.geolocation.getCurrentPosition(function(position){
       $scope.$apply(function(){
         $scope.position = position;
-        console.log('position is', position);
+        // console.log('position is', position);
         var lat = position.coords.latitude;
         var lon = position.coords.longitude;    
         var query = lat + "," + lon;
@@ -96,7 +96,7 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
      
         $http.jsonp(url + query + ".json" +"?callback=JSON_CALLBACK").success(function(response){
           $scope.location = response;
-          console.log('ApiCtrl', $scope.location)
+          // console.log('ApiCtrl', $scope.location)
         });
       });
     });
@@ -106,7 +106,7 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
     navigator.geolocation.getCurrentPosition(function(position){
       $scope.$apply(function(){
         $scope.position = position;
-        console.log('position is', position);
+        // console.log('position is', position);
         var lat = position.coords.latitude;
         var lon = position.coords.longitude;    
         var query = "lat=" + lat + "&lon=" + lon;

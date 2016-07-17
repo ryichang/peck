@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	
-console.log("SANITY CHECK!!!!!!!");
+// console.log("SANITY CHECK!!!!!!!");
 // $(window).scroll(function() {
 //   if ($(document).scrollTop() > 50) {
 //     $('navbar').addClass('shrink');
