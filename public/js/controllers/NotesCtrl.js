@@ -178,7 +178,7 @@ angular.module('peckbox')
          console.log('err', response)
        });
      };
-
+     
      $scope.deleteComment = function(comment) {
        $http.delete('/api/notes/' + comment.note + '/comments/' + comment._id)
          .success(function(data) {
