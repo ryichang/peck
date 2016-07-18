@@ -117,8 +117,9 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
           $scope.CurrentWeather = {
                   forecast: {
                       icon: "partly-cloudy-night",
-                      iconSize: 100,
-                      color: "blue",
+                      iconSize: 50,
+                      color: "white",
+                      animated: "true",
                   }
               };
           console.log('ApiCtrl', $scope.weather)
