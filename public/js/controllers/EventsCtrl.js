@@ -157,7 +157,6 @@ angular.module('peckbox')
 
     Event.get({ id: $routeParams.id }, function(event) {
       $scope.event = event;
-      $scope.date = event.date.Now.ToString("yyyy-MM-dd'T'HH:mm:ss.fffffff'Z'");
       $scope.comment = event.comments;
       console.log('outside', event);
     });
