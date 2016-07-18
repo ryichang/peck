@@ -138,6 +138,7 @@
             <h3>{{event.title}}</h3>
             <p>{{event.description}}</p>
             <p>{{event.location.formatted_address}}</p>
+            <p>{{toJsDate(values.date)| date:'mediumTime' }}</p>
             <p>{{event.date | date: 'medium'}}</p>
             <p>{{event.date | date: 'MMM d @ h:mma'}}</p>
             <p>{{event.updated_at | date: 'MMM d @ h:mma'}}</p>
