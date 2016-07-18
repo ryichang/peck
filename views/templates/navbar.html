@@ -44,6 +44,10 @@
 
   <div class="weather" ng-controller="ApisCtrl">
      <p2 ng-show="currentUser">{{location.location.city}}</p2>
+     <figure class="icons">
+        <canvas id="{{weather.currently.summary}}" width="64" height="64">
+        </canvas>
+     </figure>
      <p2 ng-show="currentUser">{{weather.currently.summary}} </p2>
      <p2 ng-show="currentUser">{{weather.currently.temperature}}° </p2>
   </div>
