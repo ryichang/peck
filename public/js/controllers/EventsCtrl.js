@@ -10,7 +10,7 @@ angular.module('peckbox')
 
 
     $scope.event = {};
-    console.log("event date is", event.date)
+    console.log("event date is", $scope.event.date)
 
     $scope.test = function(event, color) {
 
