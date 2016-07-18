@@ -1,15 +1,3 @@
-<script>
-var icons = new Skycons(),
-         list  = [
-           "clear-day", "clear-night", "partly-cloudy-day",
-           "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
-           "fog"
-         ],
-         i;
-     for(i = list.length; i--; )
-       icons.set(list[i], list[i]);
-     icons.play();
-     </script>
 <nav class="navbar navbar-default" ng-show="currentUser">
   <div class="navbar-header">
   <input type="checkbox" id="sidebartoggler" name="" value="">
@@ -56,7 +44,6 @@ var icons = new Skycons(),
 
   <div class="weather" ng-controller="ApisCtrl">
      <p2 ng-show="currentUser">{{location.location.city}}</p2>
-     <skycon icon="{{weather.currently.icon}}" width="20" height="20"></skycon>
      <p2 ng-show="currentUser">{{weather.currently.summary}} </p2>
      <p2 ng-show="currentUser">{{weather.currently.temperature}}° </p2>
   </div>
