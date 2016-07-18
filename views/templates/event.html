@@ -128,8 +128,8 @@
                 <line y2="100%" x2="100%" y1="0%" x1="0%" stroke-width="1" stroke="#fff"></line>
             </svg>    
            <!--  <i class="fa fa-close pull-right" ng-click="deleteEvent(event)"></i> -->
-          <!--   <div class="card-date">{{event.date | date: 'EEE MMM d @ hh:mma'}}</div> -->
-            <div class="card-date">{{event.date}}</div>
+            <div class="card-date">{{event.date | date: 'EEE MMM d @ hh:mma' : 'UTC'}}</div>
+           <!--  <div class="card-date">{{event.date}}</div> -->
             <div id="ribbon">
                 <div ng-show="event.comments.length>0" ng-click="eventShow(event)">{{event.comments.length}}</div>
              </div>
@@ -138,10 +138,10 @@
             <h3>{{event.title}}</h3>
             <p>{{event.description}}</p>
             <p>{{event.location.formatted_address}}</p>
-            <p>{{event.date | date: 'medium'}}</p>
+        <!--     <p>{{event.date | date: 'medium'}}</p>
             <p>{{event.date | date:'yyyy-MM-dd'}}</p>
             <p>{{event.date | date: 'MMM d @ h:mma' : 'UTC'}}</p>
-            <p>{{event.updated_at | date: 'MMM d @ h:mma'}}</p>
+            <p>{{event.updated_at | date: 'MMM d @ h:mma'}}</p> -->
 
              <div style="float:right">
              <svg height="14" width="14" value="default" ng-model="event.color" ng-click="test(event, 'default')">
