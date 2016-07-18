@@ -140,7 +140,7 @@
             <p>{{event.location.formatted_address}}</p>
             <p>{{event.date | date: 'medium'}}</p>
             <p>{{event.date | date:'yyyy-MM-dd'}}</p>
-            <p>{{event.date | date: 'MMM d @ h:mma'}}</p>
+            <p>{{event.date | date: 'MMM d @ h:mma' : 'UTC'}}</p>
             <p>{{event.updated_at | date: 'MMM d @ h:mma'}}</p>
 
              <div style="float:right">
