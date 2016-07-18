@@ -16,7 +16,7 @@
 
     <div class="card" id={{event.color}}>
       <div ng-hide="event.editForm">
-        <div class="card-date">{{event.date | date: 'EEE MMM d @ hh:mma'}}</div>
+        <div class="card-date">{{event.date | date: 'EEE MMM d @ hh:mma' : 'UTC'}}</div>
         <button type="button" class="close" ng-click="backButton()" aria-label="Close">
         <i class='icon ion-arrow-return-left custom-icon'></i>
         </button>
