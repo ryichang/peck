@@ -115,7 +115,7 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
         $http.jsonp(url + key + lat + "," + lon + "?callback=JSON_CALLBACK").success(function(response){
           $scope.weather = response;
           $scope.icon = response.weather.currently.icon;
-
+          console.log('ICON IS', $scope.icon)
           console.log('ApiCtrl', $scope.weather)
         });
       });
