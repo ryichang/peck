@@ -119,6 +119,7 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
                     iconSize: 20,
                     color: "white",
                 }
+          }
           console.log('ApiCtrl', $scope.weather)
         });
       });
