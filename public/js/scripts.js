@@ -1,6 +1,24 @@
 $(document).ready(function(){
 
-// console.log("SANITY CHECK!!!!!!!");
+console.log("SANITY CHECK!!!!!!!");
+
+    var icons = new Skycons({"color": "#000"}),
+          list  = [
+            "clear-day", "clear-night", "partly-cloudy-day",
+            "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+            "fog"
+          ],
+          i;
+
+      for(i = list.length; i--; ) {
+    var weatherType = list[i],
+        elements = document.getElementsByClassName( weatherType );
+    for (e = elements.length; e--;){
+        icons.set( elements[e], weatherType );
+    }
+}
+
+      icons.play();
 // $(window).scroll(function() {
 //   if ($(document).scrollTop() > 50) {
 //     $('navbar').addClass('shrink');
