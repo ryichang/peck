@@ -1,14 +1,5 @@
 $(document).ready(function(){
-var icons = new Skycons(),
-         list  = [
-           "clear-day", "clear-night", "partly-cloudy-day",
-           "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
-           "fog"
-         ],
-         i;
-     for(i = list.length; i--; )
-       icons.set(list[i], list[i]);
-     icons.play();
+
 // console.log("SANITY CHECK!!!!!!!");
 // $(window).scroll(function() {
 //   if ($(document).scrollTop() > 50) {

@@ -114,6 +114,25 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
         var key = "598aeaa830f0e56213a7a3401ab14bf1/"
         $http.jsonp(url + key + lat + "," + lon + "?callback=JSON_CALLBACK").success(function(response){
           $scope.weather = response;
+          $scope.icon = response.weather.currently.icon;
+
+          var icons = new Skycons({"color": "#000"}),
+                    list  = [
+                      "clear-day", "clear-night", "partly-cloudy-day",
+                      "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+                      "fog"
+                    ],
+                    i;
+
+                for(i = list.length; i--; ) {
+              var weatherType = list[i],
+                  elements = document.getElementsByClassName( weatherType );
+              for (e = elements.length; e--;){
+                  icons.set( elements[e], weatherType );
+              }
+          }
+
+                icons.play();
           console.log('ApiCtrl', $scope.weather)
         });
       });
