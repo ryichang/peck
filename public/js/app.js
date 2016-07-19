@@ -13,6 +13,7 @@ angular.module('peckbox', ['peckbox.services',
                               'angular-loading-bar',
                               'simpleAngularTicker',
                               'angularScreenfull',
+                              'angular-skycons',
                               ])
 
     .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
