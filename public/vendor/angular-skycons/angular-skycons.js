@@ -36,8 +36,8 @@ angularSkycons.directive( "skycon", function () {
                     canvas.height = newVal;
                     canvas.width = newVal;
                 } else {
-                    canvas.height = scope.size || 20;
-                    canvas.width = scope.size  || 20;
+                    canvas.height = scope.size || 64;
+                    canvas.width = scope.size  || 64;
                 }
             }, true );
 
