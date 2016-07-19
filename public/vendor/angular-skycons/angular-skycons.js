@@ -51,7 +51,7 @@ angularSkycons.directive( "skycon", function () {
 
             // watch the color property from the controller for changes
             scope.$watch( "color", function () {
-                skycons.color = white;
+                skycons.color = scope.color || white;
             }, true );
 
             if (scope.animated === "false" || scope.animated === false) {
