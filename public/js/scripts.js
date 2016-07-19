@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 console.log("SANITY CHECK!!!!!!!");
-
+var skycons = new Skycons({"color": "pink"});
 // $(window).scroll(function() {
 //   if ($(document).scrollTop() > 50) {
 //     $('navbar').addClass('shrink');
