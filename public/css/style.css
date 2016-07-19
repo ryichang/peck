@@ -154,7 +154,7 @@ p2 {
 .weather {
   font-family: "Helvetica";
   position: fixed;
-  top: 10px;
+  top: 5px;
   right: 20px;
   font-size: 16px;
   background: transparent;
