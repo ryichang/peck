@@ -74,7 +74,25 @@
     <ng-include src="'templates/navbar'"></ng-include>
     <div ng-view="ng-view"></div>
 
+    <script>
+        var icons = new Skycons({"color": "#000"}),
+              list  = [
+                "clear-day", "clear-night", "partly-cloudy-day",
+                "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+                "fog"
+              ],
+              i;
 
+          for(i = list.length; i--; ) {
+        var weatherType = list[i],
+            elements = document.getElementsByClassName( weatherType );
+        for (e = elements.length; e--;){
+            icons.set( elements[e], weatherType );
+        }
+    }
+
+          icons.play();
+      </script>
 
     <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -117,7 +135,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
     <!-- Skycon -->
     <script type="text/javascript" src="/js/skycons.js"></script>
-    
+
     <script type="text/javascript" src="/js/app.js"></script>
     <script type="text/javascript" src="/js/services.js"></script>
     <script type="text/javascript" src="/js/scripts.js"></script>
