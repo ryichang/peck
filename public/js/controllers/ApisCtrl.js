@@ -118,6 +118,7 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
                 forecast: {
                     iconSize: 30,
                     color: "white",
+                    margin: 10,
                 }
           }
           console.log('ApiCtrl', $scope.weather)
