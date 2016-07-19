@@ -116,9 +116,8 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
           $scope.weather = response;
           $scope.CurrentWeather = {
                 forecast: {
-                    iconSize: 100,
+                    iconSize: 20,
                     color: "white",
-                   
                 }
           console.log('ApiCtrl', $scope.weather)
         });
