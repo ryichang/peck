@@ -25,7 +25,7 @@ angularSkycons.directive( "skycon", function () {
 
             // set default color if "color" attribute not present
             var config = {
-                color: scope.color || "black"
+                color: scope.color || "white"
             };
 
             var skycons = new Skycons( config );
@@ -51,7 +51,7 @@ angularSkycons.directive( "skycon", function () {
 
             // watch the color property from the controller for changes
             scope.$watch( "color", function () {
-                skycons.color = scope.color || white;
+                skycons.color = scope.color;
             }, true );
 
             if (scope.animated === "false" || scope.animated === false) {
