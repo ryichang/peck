@@ -286,6 +286,10 @@ a {
   background-color: rgba(250,215,123,1);
 }
 
+#white {
+  color: #fff;
+}
+
 nav.navbar {
   top: 0;
   border-width: 0 0 1px;
