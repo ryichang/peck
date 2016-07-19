@@ -163,6 +163,11 @@ p2 {
   text-transform: uppercase;
 }
 
+.weatherIcon{
+  width: 16px;
+  height: 16px;
+  color: #fff;
+}
 
 html, body {
     overflow-x: hidden;
