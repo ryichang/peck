@@ -36,8 +36,8 @@ angularSkycons.directive( "skycon", function () {
                     canvas.height = newVal;
                     canvas.width = newVal;
                 } else {
-                    canvas.height = scope.size || 64;
-                    canvas.width = scope.size  || 64;
+                    canvas.height = scope.size || 20;
+                    canvas.width = scope.size  || 20;
                 }
             }, true );
 
@@ -51,7 +51,7 @@ angularSkycons.directive( "skycon", function () {
 
             // watch the color property from the controller for changes
             scope.$watch( "color", function () {
-                skycons.color = scope.color;
+                skycons.color = white;
             }, true );
 
             if (scope.animated === "false" || scope.animated === false) {
