@@ -14,6 +14,7 @@ angular.module('peckbox', ['peckbox.services',
                               'simpleAngularTicker',
                               'angularScreenfull',
                               'angular-skycons',
+                              'ngSanitize',
                               ])
 
     .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
