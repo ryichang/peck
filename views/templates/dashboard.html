@@ -226,7 +226,7 @@
               </div>
               <i class="ion-plus" style="float:right" ng-click="noteShow(note)"></i>
              <!--  <div ng-init="limit = 140; moreShown = false"> -->
-              <p>{{note.body}}
+              <p ng-bind-html="note.body | linky"><!-- {{note.body}} -->
              <!--  <a ng-show="note.body.length > limit" href ng-click="limit = note.body.length; moreShown = true">More</a> -->
           <!--     <a href="#" class="pull-right">
                 <i class="ion-more" style="float: right" ng-click="note.editForm = true"></i>
