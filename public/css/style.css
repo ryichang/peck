@@ -147,7 +147,7 @@ p {
 }
 
 p a{
-  color: rgb(18,141,249,1);
+  color: rgba(18,141,249,1);
   cursor: pointer;
 }
 
