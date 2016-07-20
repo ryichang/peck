@@ -146,9 +146,10 @@ p {
   text-rendering: optimizelegibility;
 }
 
-p .a{
-  color: #000 !important;
+p a{
+  color: #000;
 }
+
 
 p2 {
   font-family: "YeezyB";
