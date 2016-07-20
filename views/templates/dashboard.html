@@ -227,15 +227,15 @@
               <i class="ion-plus" style="float:right" ng-click="noteShow(note)"></i>
              <!--  <div ng-init="limit = 140; moreShown = false"> -->
           <!--    <p ng-bind-html="note.body | parseUrl"></p> -->
-          <!--    <p ng-bind-html="note.body| linky:'_blank'"></p> -->
-              <p>{{note.body | linky:'_blank'}}
+             <p ng-bind-html="note.body| linky:'_blank'"></p>
+          <!--     <p>{{note.body | linky:'_blank'}} -->
 
              <!--  <a ng-show="note.body.length > limit" href ng-click="limit = note.body.length; moreShown = true">More</a> -->
           <!--     <a href="#" class="pull-right">
                 <i class="ion-more" style="float: right" ng-click="note.editForm = true"></i>
               </a> -->
              <!--  <a ng-hide="note.body.length > limit" href ng-click="limit = 140; moreShown = false"> Less </a> -->
-              </p>
+             <!--  </p> -->
                <div style="float:right">
                <svg height="14" width="14" value="default" ng-model="note.color" ng-click="test(note, 'default')">
                <rect x="2" y="2" height="10" width="10" fill="rgba(242,239,235,1)" stroke="#000" stroke-width="2"></rect>
