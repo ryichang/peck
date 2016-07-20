@@ -138,7 +138,7 @@
   /* Define skycon things. */
   /* FIXME: I'm *really really* sorry that this code is so gross. Really, I am.
    * I'll try to clean it up eventually! Promise! */
-  var KEYFRAME = 100,
+  var KEYFRAME = 500,
       STROKE = 0.08,
       TAU = 2.0 * Math.PI,
       TWO_OVER_SQRT_2 = 2.0 / Math.sqrt(2);
@@ -194,7 +194,7 @@
   }
 
   function sun(ctx, t, cx, cy, cw, s, color) {
-    t /= 120000;
+    t /= 12000;
 
     var a = cw * 0.25 - s * 0.5,
         b = cw * 0.32 + s * 0.5,
