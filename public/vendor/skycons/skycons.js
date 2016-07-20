@@ -178,7 +178,7 @@
   }
 
   function cloud(ctx, t, cx, cy, cw, s, color) {
-    t /= 30000;
+    t /= 12000;
 
     var a = cw * 0.21,
         b = cw * 0.12,
