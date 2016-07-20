@@ -120,59 +120,7 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
                     color: "white",
                 }
           };
-          // clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, partly-cloudy-day, or partly-cloudy-night
-          $scope.TestingWeather = {
-                  cday: {
-                      icon: "clear-day",
-                      iconSize: 100,
-                      color: "blue",
-                  },
-                  cnight: {
-                      icon: "clear-night",
-                      iconSize: 100,
-                      color: "blue",
-                  },
-                  rain: {
-                      icon: "rain",
-                      iconSize: 100,
-                      color: "blue",
-                  },
-                  snow: {
-                      icon: "snow",
-                      iconSize: 100,
-                      color: "blue",
-                  },
-                  sleet: {
-                      icon: "sleet",
-                      iconSize: 100,
-                      color: "blue",
-                  },
-                  wind: {
-                      icon: "wind",
-                      iconSize: 100,
-                      color: "blue",
-                  },
-                  fog: {
-                      icon: "fog",
-                      iconSize: 100,
-                      color: "blue",
-                  },
-                  cloudy: {
-                      icon: "cloudy",
-                      iconSize: 100,
-                      color: "blue",
-                  },
-                  pcday: {
-                      icon: "partly-cloudy-day",
-                      iconSize: 100,
-                      color: "blue",
-                  },
-                  pcnight: {
-                      icon: "partly-cloudy-night",
-                      iconSize: 100,
-                      color: "blue",
-                  },
-              };
+         
           console.log('ApiCtrl', $scope.weather)
         });
       });
