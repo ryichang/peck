@@ -219,7 +219,7 @@
   }
 
   function moon(ctx, t, cx, cy, cw, s, color) {
-    t /= 15000;
+    t /= 12000;
 
     var a = cw * 0.29 - s * 0.5,
         b = cw * 0.05,
