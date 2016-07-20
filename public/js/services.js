@@ -36,8 +36,8 @@ angular.module('peckbox.services', [])
 
           return text       
       }
-  }
-  
+  })
+
   .factory('Post', function ($window, $resource) {
      return $resource($window.location.origin + '/api/posts/:id', { id: '@id' }, {
        update: { method: 'PUT'} 
