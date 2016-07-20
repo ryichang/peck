@@ -3,12 +3,12 @@
 /* NOTE Controllers */
 
 angular.module('peckbox')
-  .controller('NotesCtrl', ['$scope', '$http', '$auth', 'Auth', 'toastr', '$location', '$routeParams', 'Note', function($scope, $http, $auth, Auth, toastr, $location, $routeParams, Note) {
+  .controller('NotesCtrl', ['$scope', '$http', '$auth', 'Auth', 'toastr', '$location', '$routeParams', 'Note', '$filter', function($scope, $http, $auth, Auth, toastr, $location, $routeParams, Note, $filter) {
     $http.get('/api/me').success(function(data) {
       $scope.user = data;
     });
 
-
+    $scope.testString = $filter('linky')('hi yahoo is yahoo@yahoo.com');
     $scope.note = {};
 
     $scope.test = function(note, color) {
