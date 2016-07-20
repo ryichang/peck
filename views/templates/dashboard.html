@@ -197,7 +197,7 @@
     
 
 
-     <div ng-repeat="note in user.notes | filter:search">
+     <div ng-repeat="note in user.notes | filter:search | linky">
        <!-- <div class="col-sm-12 card fade">
      
            <div class="card-date">{{note.created_at | date: 'MMMM d @ h:mma'}}</div>
