@@ -147,14 +147,9 @@ p {
 }
 
 p a{
-  color: rgba(67,0,152,1);
+  color: rgb(18,141,249,1);
   cursor: pointer;
 }
-
-p a:hover{
-  color: #ff5277;
-}
-
 
 
 p2 {
