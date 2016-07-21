@@ -7,7 +7,8 @@
         <i class='icon ion-arrow-return-left custom-icon'></i>
         </button>
           <h3>{{post.title}}</h3>
-          <p>{{post.body}}</p>
+          <p ng-bind-html="post.body | linky:'_blank'"></p>
+          <!-- <p>{{post.body}}</p> -->
       <!--     <p>{{post.userId.displayName}}</p> -->
           <div style="float:right">
           <svg height="14" width="14" value="default" ng-model="post.color" ng-click="test(post, 'default')">
@@ -66,7 +67,9 @@
               <line y2="100%" x2="100%" y1="0%" x1="0%" stroke-width="0.8" stroke="#fff"></line>
           </svg>  
           <div class="card-date">{{comment.updated_at | date: 'MMM d @ h:mma'}}</div>
-          <p>{{comment.body}}</p>
+          <p ng-bind-html="comment.body | linky:'_blank'"></p>
+          <!-- <p>{{comment.body}}</p> -->
+
           <!-- <p>{{comment.userId.displayName}}</p> -->
 
             <div style="float:right">

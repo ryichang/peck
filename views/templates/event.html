@@ -136,7 +136,8 @@
              <i class="ion-plus" style="float:right;" ng-click="eventShow(event)"></i>
             <!-- <div class="card-date">{{post.created_at | date: 'MMMM d'}}</div> -->
             <h3>{{event.title}}</h3>
-            <p>{{event.description}}</p>
+            <p ng-bind-html="event.description | linky:'_blank'"></p>
+        <!--     <p>{{event.description}}</p> -->
             <p>{{event.location.formatted_address}}</p>
         <!--     <p>{{event.date | date: 'medium'}}</p>
             <p>{{event.date | date:'yyyy-MM-dd'}}</p>

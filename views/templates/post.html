@@ -39,7 +39,8 @@
             <i class="ion-plus" style="float:right" ng-click="postShow(post)"></i>
             <!-- <div class="card-date">{{post.created_at | date: 'MMMM d'}}</div> -->
             <h3>{{post.title}}</h3>
-            <p>{{post.body}}</p>
+            <p ng-bind-html="post.body | linky:'_blank'"></p>
+            <!-- <p>{{post.body}}</p> -->
               <div style="float:right">
               <svg height="14" width="14" value="default" ng-model="post.color" ng-click="test(post, 'default')">
               <rect x="2" y="2" height="10" width="10" fill="rgba(242,239,235, 1)" stroke="#000" stroke-width="2"></rect>
