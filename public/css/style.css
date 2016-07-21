@@ -147,7 +147,8 @@ p {
 }
 
 p a{
-  color: rgba(90,24,70,1);
+  color: rgba(103,58,183,1);
+/*  color: rgba(90,24,70,1);*/
   font-weight: 800;
  /* color: rgba(18,141,249,1);*/
   cursor: pointer;
