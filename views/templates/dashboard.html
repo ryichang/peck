@@ -294,7 +294,8 @@
             <i class="ion-plus" style="float:right;" ng-click="eventShow(event)"></i>
             <h3>{{event.title}}</h3>
           <!--   <h3>{{event.date | date: 'hh:mma'}}</h3> -->
-            <p>{{event.description}}</p>
+            <p ng-bind-html="event.description | linky:'_blank'"></p>
+            <!-- <p>{{event.description}}</p> -->
             <p>{{event.location.formatted_address}}</p>
             
              <div style="float:right">
