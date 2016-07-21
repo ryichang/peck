@@ -37,7 +37,8 @@
             <i class="ion-plus" style="float:right" ng-click="groupShow(group)"></i>
             <!-- <div class="card-date">{{post.created_at | date: 'MMMM d'}}</div> -->
             <h3>{{group.title}}</h3>
-            <p>{{group.description}}</p>
+            <p ng-bind-html="group.description | linky:'_blank'"></p>
+            <!-- <p>{{group.description}}</p> -->
             <p>{{group.owner.displayName}}</p>
            <!--  <p>{{user._id}}</p> -->
               <div style="float:right">

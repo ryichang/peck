@@ -7,7 +7,8 @@
         <i class='icon ion-arrow-return-left custom-icon'></i>
         </button>
           <h3>{{group.title}}</h3>
-          <p>{{group.description}}</p>
+          <p ng-bind-html="group.description | linky:'_blank'"></p>
+    <!--       <p>{{group.description}}</p> -->
           <div ng-repeat="user in group.users">
             <div class="groupProfile">
               <h5><img src="{{user.picture}}" alt="" class="groupprofilePicture">{{user.displayName}}</h5>
@@ -73,7 +74,8 @@
          <i class="ion-plus" style="float:right;" ng-click="eventShow(event)"></i> -->
 
         <h3>{{event.title}}</h3>
-        <p>{{event.description}}</p>
+        <p ng-bind-html="event.description | linky:'_blank'"></p>
+     <!--    <p>{{event.description}}</p> -->
         <p>{{event.location.formatted_address}}</p>
 
          <div style="float:right">
@@ -231,7 +233,8 @@
             </div>
          
      <!--      <h3>{{comment.userId.displayName}}</h3> -->
-          <p>{{comment.body}}</p>
+          <p ng-bind-html="comment.body | linky:'_blank'"></p>
+        <!--   <p>{{comment.body}}</p> -->
         <!--   <p>{{comment.userId._id}}</p> -->
 
 
