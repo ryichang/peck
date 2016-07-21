@@ -6,7 +6,8 @@
         <button type="button" class="close" ng-click="backButton()" aria-label="Close">
         <i class='icon ion-arrow-return-left custom-icon'></i>
         </button>
-          <p>{{note.body}}</p>
+          <p ng-bind-html="note.body | linky:'_blank'"></p>
+          <!-- <p>{{note.body}}</p> -->
          <!--  <p>{{note.userId.displayName}}</p> -->
           <div style="float:right">
           <svg height="14" width="14" value="default" ng-model="note.color" ng-click="test(note, 'default')">
@@ -62,7 +63,8 @@
               <line y2="100%" x2="100%" y1="0%" x1="0%" stroke-width="0.8" stroke="#fff"></line>
           </svg>  
           <div class="card-date">{{comment.updated_at | date: 'MMM d @ h:mma'}}</div>
-          <p>{{comment.body}}</p>
+          <p ng-bind-html="comment.body | linky:'_blank'"></p>
+         <!--  <p>{{comment.body}}</p> -->
          <!--  <p>{{comment.userId.displayName}}</p>
  -->
             <div style="float:right">
