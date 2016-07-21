@@ -148,6 +148,7 @@ p {
 
 p a{
   color: rgba(114,148,212,1);
+  font-weight: 800;
  /* color: rgba(18,141,249,1);*/
   cursor: pointer;
 }
