@@ -27,7 +27,7 @@ directive('ticker', function ($interval, $timeout) {
                     }
 
                     scope.$watch(element, function () {
-                        
+
                         var list = element,
                             items = element.find('li'),
                             itemFirst;
