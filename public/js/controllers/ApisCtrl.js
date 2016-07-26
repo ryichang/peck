@@ -84,9 +84,11 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
 //                     console.log('response', data)
 //                     $scope.results = data.results;
 //                 });
- if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position){
-      $scope.$apply(function(){
+
+navigator.geolocation.getCurrentPosition(success, error);
+function success(position) {  
+  var coords = position.coords;
+  $scope.$apply(function(){
         $scope.position = position;
         // console.log('position is', position);
         var lat = position.coords.latitude;
@@ -99,33 +101,75 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
           // console.log('ApiCtrl', $scope.location)
         });
       });
+  $scope.$apply(function(){
+    $scope.position = position;
+    // console.log('position is', position);
+    var lat = position.coords.latitude;
+    var lon = position.coords.longitude;    
+    var query = "lat=" + lat + "&lon=" + lon;
+    var url ="https://api.forecast.io/forecast/"
+    var key = "598aeaa830f0e56213a7a3401ab14bf1/"
+    $http.jsonp(url + key + lat + "," + lon + "?callback=JSON_CALLBACK").success(function(response){
+      $scope.weather = response;
+      $scope.CurrentWeather = {
+            forecast: {
+                iconSize: 20,
+                color: "white",
+            }
+      };
+     
+      console.log('ApiCtrl', $scope.weather)
     });
-  }
+  });
+  console.log('Your current position is ' + coords.latitude + ' X ' + coords.longitude);
+}
 
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position){
-      $scope.$apply(function(){
-        $scope.position = position;
-        // console.log('position is', position);
-        var lat = position.coords.latitude;
-        var lon = position.coords.longitude;    
-        var query = "lat=" + lat + "&lon=" + lon;
-        var url ="https://api.forecast.io/forecast/"
-        var key = "598aeaa830f0e56213a7a3401ab14bf1/"
-        $http.jsonp(url + key + lat + "," + lon + "?callback=JSON_CALLBACK").success(function(response){
-          $scope.weather = response;
-          $scope.CurrentWeather = {
-                forecast: {
-                    iconSize: 20,
-                    color: "white",
-                }
-          };
+function error(err) {  
+  console.warn('ERROR(' + err.code + '): ' + err.message);
+}
+
+ // if (navigator.geolocation) {
+ //    navigator.geolocation.getCurrentPosition(function(position){
+ //      $scope.$apply(function(){
+ //        $scope.position = position;
+ //        // console.log('position is', position);
+ //        var lat = position.coords.latitude;
+ //        var lon = position.coords.longitude;    
+ //        var query = lat + "," + lon;
+ //        var url = "https://api.wunderground.com/api/df7130ecdd31c499/geolookup/q/";
+     
+ //        $http.jsonp(url + query + ".json" +"?callback=JSON_CALLBACK").success(function(response){
+ //          $scope.location = response;
+ //          // console.log('ApiCtrl', $scope.location)
+ //        });
+ //      });
+ //    });
+ //  }
+
+ //  if (navigator.geolocation) {
+ //    navigator.geolocation.getCurrentPosition(function(position){
+ //      $scope.$apply(function(){
+ //        $scope.position = position;
+ //        // console.log('position is', position);
+ //        var lat = position.coords.latitude;
+ //        var lon = position.coords.longitude;    
+ //        var query = "lat=" + lat + "&lon=" + lon;
+ //        var url ="https://api.forecast.io/forecast/"
+ //        var key = "598aeaa830f0e56213a7a3401ab14bf1/"
+ //        $http.jsonp(url + key + lat + "," + lon + "?callback=JSON_CALLBACK").success(function(response){
+ //          $scope.weather = response;
+ //          $scope.CurrentWeather = {
+ //                forecast: {
+ //                    iconSize: 20,
+ //                    color: "white",
+ //                }
+ //          };
          
-          console.log('ApiCtrl', $scope.weather)
-        });
-      });
-    });
-  }
+ //          console.log('ApiCtrl', $scope.weather)
+ //        });
+ //      });
+ //    });
+ //  }
 
 
   //   if (navigator.geolocation) {
