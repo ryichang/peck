@@ -36,7 +36,7 @@ directive('ticker', function ($interval, $timeout) {
                         if (items.length) {
                             list.addClass('active');
 
-                            start = (function () {
+                            start = $interval(function () {
 
                                 /*cancel the callback function for fade-out and makes the ticker steady.*/
                                 if (isHovered) {
@@ -87,7 +87,7 @@ directive('ticker', function ($interval, $timeout) {
                     element.on('mouseleave', function () {
                         isHovered = false;
                     });
-                });    
+                }, 5000);    
                 
 
             };
