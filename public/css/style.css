@@ -614,16 +614,16 @@ svg.close-btn {
 .fade {
   opacity: 0;
   /* make things invisible upon start */
-  -webkit-animation: fadeIn ease-in 1;
+  -webkit-animation: fadeIn ease-in ;
   /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
-  -moz-animation: fadeIn ease-in 1;
-  animation: fadeIn ease-in 1;
+  -moz-animation: fadeIn ease-in ;
+  animation: fadeIn ease-in ;
   -webkit-animation-fill-mode: forwards;
   -moz-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
- /* -webkit-animation-duration: 1s;
+  -webkit-animation-duration: 1s;
   -moz-animation-duration: 1s;
-  animation-duration: 1s;*/
+  animation-duration: 1s;
 }
 
 .logo {
