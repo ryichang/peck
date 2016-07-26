@@ -626,7 +626,7 @@ svg.close-btn {
   animation-duration: 1s;
 }
 
-.modalfade {
+.modalFade {
   opacity: 0;
   /* make things invisible upon start */
   -webkit-animation: fadeIn ease-in 1;
