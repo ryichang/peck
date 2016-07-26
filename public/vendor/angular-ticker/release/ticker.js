@@ -27,28 +27,7 @@ directive('ticker', function ($interval, $timeout) {
                     }
 
                     scope.$watch(element, function () {
-
-                        $scope.news={}
-                        $scope.types = ['hot'];         
-                        $scope.subredit="worldnews";      
-                        $scope.type="top";
-                        var url="https://api.reddit.com/r/"+$scope.subredit+"/?jsonp=JSON_CALLBACK";
-                        $http.jsonp(url).success(function(data) {
-                          $scope.elements = [];
-                          var dataset = data.data.children;
-                          for (var i=0; i<dataset.length; i++ ){
-                                $scope.elements.push(dataset[i].data); // response data 
-                                // console.log('reddit', $scope.elements);
-                              }       
-                            });
-
-                        var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb58d5412a54799e82ad086c0387669:5:74719242&responce-format=.jsonp&callback=JSON_CALLBACK'; 
-                                        $http.jsonp(api).success(function(data){
-                                            // console.log('response', data)
-                                            $scope.news = data.results;
-                                            // console.log('news scope is', $scope.news)
-                                        });
-
+                        
                         var list = element,
                             items = element.find('li'),
                             itemFirst;
