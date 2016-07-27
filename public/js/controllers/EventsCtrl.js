@@ -10,8 +10,8 @@ angular.module('peckbox')
       for (var index in data.events){
         var today = new Date();
         var dd = today.getDate();
-        var dateNow = Date.now();
-        if(data.events[index].date == Date.now()){
+        var dateNow = Date();
+        if(data.events[index].date == Date()){
           data.events[index].color = "urgent";
         }
       }
