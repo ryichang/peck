@@ -8,10 +8,11 @@ angular.module('peckbox')
       // $scope.user = data;
       console.log('data is', data);
       for (var index in data.events){
-        if(data.event[index].date = Date.now()){
-          data.event.color = "urgent";
+        if(data.events[index].date = Date.now()){
+          data.events[index].color = "urgent";
         }
       }
+      console.log('events color is', data.events.color)
     $scope.user = data;
     });
 
