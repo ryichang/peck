@@ -292,7 +292,7 @@ a {
 }
 
 #urgent {
-      transform: translateY(-10px) scale(1.02);
+     animation: pulsate 3s infinite;
 }
 
 nav.navbar {
