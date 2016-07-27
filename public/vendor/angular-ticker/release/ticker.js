@@ -32,37 +32,98 @@ directive('ticker', function ($interval, $timeout) {
                             items = element.find('li'),
                             itemFirst;
 
-
-                        while (items.length) {
+                        do {
                             list.addClass('active');
 
-                            start = $interval(function () {
+                                                        start = $interval(function () {
 
-                                /*cancel the callback function for fade-out and makes the ticker steady.*/
-                                if (isHovered) {
-                                    $timeout.cancel(innerTime);
-                                    return;
-                                }
+                                                            /*cancel the callback function for fade-out and makes the ticker steady.*/
+                                                            if (isHovered) {
+                                                                $timeout.cancel(innerTime);
+                                                                return;
+                                                            }
 
-                                items = list.children('li');
-                                itemFirst = angular.element(items[0]);
+                                                            items = list.children('li');
+                                                            itemFirst = angular.element(items[0]);
 
-                                itemFirst.addClass('fade-out minus-margin-top');
+                                                            itemFirst.addClass('fade-out minus-margin-top');
 
 
-                                $timeout(function () {
-                                    itemFirst.removeClass('minus-margin-top');
-                                    list.append(itemFirst);
+                                                            $timeout(function () {
+                                                                itemFirst.removeClass('minus-margin-top');
+                                                                list.append(itemFirst);
 
-                                    innerTime = $timeout(function () {
-                                        items.removeClass('fade-out');
-                                    }, timingEffect);
+                                                                innerTime = $timeout(function () {
+                                                                    items.removeClass('fade-out');
+                                                                }, timingEffect);
 
-                                }, timingEffect);
+                                                            }, timingEffect);
 
-                            }, timing);
+                                                        }, timing);
 
-                        } 
+
+                        }
+                        while (items.length);
+
+                        // if (items.length) {
+                        //     list.addClass('active');
+
+                        //     start = $interval(function () {
+
+                        //         /*cancel the callback function for fade-out and makes the ticker steady.*/
+                        //         if (isHovered) {
+                        //             $timeout.cancel(innerTime);
+                        //             return;
+                        //         }
+
+                        //         items = list.children('li');
+                        //         itemFirst = angular.element(items[0]);
+
+                        //         itemFirst.addClass('fade-out minus-margin-top');
+
+
+                        //         $timeout(function () {
+                        //             itemFirst.removeClass('minus-margin-top');
+                        //             list.append(itemFirst);
+
+                        //             innerTime = $timeout(function () {
+                        //                 items.removeClass('fade-out');
+                        //             }, timingEffect);
+
+                        //         }, timingEffect);
+
+                        //     }, timing);
+
+                        // } else {
+                        //     list.addClass('active');
+
+                        //     start = $interval(function () {
+
+                        //         /*cancel the callback function for fade-out and makes the ticker steady.*/
+                        //         if (isHovered) {
+                        //             $timeout.cancel(innerTime);
+                        //             return;
+                        //         }
+
+                        //         items = list.children('li');
+                        //         itemFirst = angular.element(items[0]);
+
+                        //         itemFirst.addClass('fade-out minus-margin-top');
+
+
+                        //         $timeout(function () {
+                        //             itemFirst.removeClass('minus-margin-top');
+                        //             list.append(itemFirst);
+
+                        //             innerTime = $timeout(function () {
+                        //                 items.removeClass('fade-out');
+                        //             }, timingEffect);
+
+                        //         }, timingEffect);
+
+                        //     }, timing);
+                        //     // console.warn('no items assigned to ticker! Ensure you have correctly assigned items to your ng-repeat.');
+                        // }
 
                     });
 
