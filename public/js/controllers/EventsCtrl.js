@@ -15,7 +15,7 @@ angular.module('peckbox')
           data.events[index].color = "urgent";
         }
       }
-      console.log('data event date is', data.events.date)
+      console.log('data event date is', data.events[0].date)
       console.log('events color is', data)
       console.log('dateNow is', dateNow)
     $scope.user = data;
