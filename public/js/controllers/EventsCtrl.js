@@ -17,6 +17,14 @@ angular.module('peckbox')
     //   event.color = "urgent";
     //   console.log('getDateTime is', getDateTime);
     // }
+    $scope.urgent = {};
+
+      if (event.date <= Date.now()){
+        $scope.urgent = "urgent";
+      } else {
+        $scope.urgent = "default";
+      }
+    
 
     $scope.test = function(event, color) {
         // console.log(event);
