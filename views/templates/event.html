@@ -120,7 +120,7 @@
      <!-- 
       <div ng-repeat="post in posts | orderBy:'-created_at'"> -->
 
-      <div ng-if="check" ng-repeat="event in user.events | orderBy:'-created_at | check'">
+      <div ng-repeat="event in user.events | orderBy:'-created_at'">
         <div class="col-sm-3 card" id="{{event.color}}">
          <div ng-hide="event.editForm">
             <svg width="10" height="10" class="close-btn" ng-click="deleteEvent(event)">
