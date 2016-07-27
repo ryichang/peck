@@ -13,7 +13,7 @@ angular.module('peckbox')
         var dateNow = moment().format('YYYY-MM-DD');
         var momentDate = moment(data.events[index].date).format('YYYY-MM-DD');
 
-        if( moment(data.events[index].date).format('YYYY-MM-DD') == moment().format('YYYY-MM-DD')){
+        if( moment(data.events[index].date).format('YYYY-MM-DD').utc() == moment().format('YYYY-MM-DD')){
           data.events[index].color = "urgent";
 
         }
