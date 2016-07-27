@@ -11,16 +11,15 @@ angular.module('peckbox')
         var today = new Date();
         var dd = today.getDate();
         var dateNow = moment().format('YYYY-MM-DD');
-        var momentData = moment(data.events[index].date).format('YYYY-MM-DD');
+        var momentDate = moment(data.events[index].date).format('YYYY-MM-DD');
+
         if( moment(data.events[index].date).format('YYYY-MM-DD') == moment().format('YYYY-MM-DD')){
-          console.log('inside loop')
           data.events[index].color = "urgent";
 
         }
          $scope.user = data;
       }
-      console.log('data event date is', momentData)
-      console.log('events color is', data)
+      console.log('momentDate is', momentDate)
       console.log('dateNow is', dateNow)
     // $scope.user = data;
     });
