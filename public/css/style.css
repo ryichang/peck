@@ -293,7 +293,7 @@ a {
 
 #urgent {
      animation: pulsate 3s infinite;
-     background-color: rgba(255,235,1);
+     background-color: rgba(255,235,0,1);
 }
 
 nav.navbar {
