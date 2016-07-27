@@ -11,10 +11,11 @@ angular.module('peckbox')
         var today = new Date();
         var dd = today.getDate();
         var dateNow = moment().format('YYYY-MM-DD');
-        if(data.events[index].date.format("yyyy-mm-dd") == moment().format('YYYY-MM-DD')){
+        if(data.events[index].date == moment().format('YYYY-MM-DD')){
           data.events[index].color = "urgent";
         }
       }
+      console.log('data event date is', data.events.date)
       console.log('events color is', data)
       console.log('dateNow is', dateNow)
     $scope.user = data;
