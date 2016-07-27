@@ -6,6 +6,8 @@ angular.module('peckbox')
   .controller('EventsCtrl', ['$scope', '$http', '$auth', 'Auth', 'toastr', '$location', function($scope, $http, $auth, Auth, toastr, $location) {
     $http.get('/api/me').success(function(data) {
       $scope.user = data;
+
+
     });
 
 
@@ -17,14 +19,23 @@ angular.module('peckbox')
     //   event.color = "urgent";
     //   console.log('getDateTime is', getDateTime);
     // }
-    $scope.urgent = {};
-
-      if (event.date <= Date.now()){
-        $scope.urgent = "urgent";
-      } else {
-        $scope.urgent = "default";
+    $scope.check = function(){
+      if($scope.event.date <= Date.now()){
+        event.color = "urgent"
       }
-    
+    }
+
+    // $scope.urgent = function(event, urgent)
+    //   {
+    //     if (event.date <= Date.now()){
+    //       $scope.urgent = "urgent";
+    //     } else {
+    //       $scope.urgent = "default";
+    //     }
+        
+    //   };
+
+      
 
     $scope.test = function(event, color) {
         // console.log(event);
