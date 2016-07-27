@@ -11,12 +11,12 @@ angular.module('peckbox')
 
     $scope.event = {};
    
-    $scope.getDatetime = new Date();
+    // $scope.getDatetime = new Date();
 
-    if (event.date = getDateTime) {
-      event.color = "urgent";
-      console.log('getDateTime is', getDateTime);
-    }
+    // if (event.date = getDateTime) {
+    //   event.color = "urgent";
+    //   console.log('getDateTime is', getDateTime);
+    // }
 
     $scope.test = function(event, color) {
         // console.log(event);
