@@ -278,8 +278,8 @@ a {
 #red {
   background: rgba(247,73,86,1);
  /*  animation: pulsate 3s infinite;*/
- /* -webkit-animation: blinker 1s infinite;
-          animation: blinker 1s infinite;*/
+  -webkit-animation: blinker 1s infinite;
+          animation: blinker 1s infinite;
 }
 
 #blue {
