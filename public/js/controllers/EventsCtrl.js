@@ -6,6 +6,7 @@ angular.module('peckbox')
   .controller('EventsCtrl', ['$scope', '$http', '$auth', 'Auth', 'toastr', '$location', function($scope, $http, $auth, Auth, toastr, $location) {
     $http.get('/api/me').success(function(data) {
       // $scope.user = data;
+      console.log('data is', data);
       for (var index in data.events){
         if(data.event[index].date = Date.now()){
           data.event.color = "urgent";
