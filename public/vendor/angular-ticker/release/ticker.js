@@ -33,7 +33,7 @@ directive('ticker', function ($interval, $timeout) {
                             itemFirst;
 
 
-                        if (items.length) {
+                        while (items.length) {
                             list.addClass('active');
 
                             start = $interval(function () {
@@ -62,36 +62,7 @@ directive('ticker', function ($interval, $timeout) {
 
                             }, timing);
 
-                        } else {
-                            list.addClass('active');
-
-                            start = $interval(function () {
-
-                                /*cancel the callback function for fade-out and makes the ticker steady.*/
-                                if (isHovered) {
-                                    $timeout.cancel(innerTime);
-                                    return;
-                                }
-
-                                items = list.children('li');
-                                itemFirst = angular.element(items[0]);
-
-                                itemFirst.addClass('fade-out minus-margin-top');
-
-
-                                $timeout(function () {
-                                    itemFirst.removeClass('minus-margin-top');
-                                    list.append(itemFirst);
-
-                                    innerTime = $timeout(function () {
-                                        items.removeClass('fade-out');
-                                    }, timingEffect);
-
-                                }, timingEffect);
-
-                            }, timing);
-                            // console.warn('no items assigned to ticker! Ensure you have correctly assigned items to your ng-repeat.');
-                        }
+                        } 
 
                     });
 
