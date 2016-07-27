@@ -11,9 +11,14 @@ angular.module('peckbox')
 
     $scope.event = {};
    
+    $scope.getDatetime = new Date();
+
+    if (event.date = getDateTime) {
+      event.color = "urgent";
+      console.log('getDateTime is', getDateTime);
+    }
 
     $scope.test = function(event, color) {
-
         // console.log(event);
         // overriding event model with color (String)
         if (color === "red") {
