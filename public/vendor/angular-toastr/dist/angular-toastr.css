@@ -134,6 +134,7 @@ button.toast-close-button {
   margin: auto;
 }
 .toast {
+  font-family: "YeezyR", sans-serif;
   background-color: #030303;
 }
 .toast-success {
