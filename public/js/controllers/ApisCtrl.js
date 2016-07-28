@@ -38,13 +38,15 @@ angular.module('peckbox')
     for (var i=0; i<dataset.length; i++ ){
           $scope.elements.push(dataset[i].data); // response data 
           // console.log('reddit', $scope.elements);
-        }       
+        }    
+    toastr.warning('Loading Top Worldnews from Reddit');   
       });
 
 var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb58d5412a54799e82ad086c0387669:5:74719242&responce-format=.jsonp&callback=JSON_CALLBACK'; 
                 $http.jsonp(api).success(function(data){
                     // console.log('response', data)
                     $scope.news = data.results;
+                    toastr.warning('Loading latest published articles from New York Times');  
                     // console.log('news scope is', $scope.news)
                 });
 
