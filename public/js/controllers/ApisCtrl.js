@@ -120,7 +120,7 @@ function success(position) {
                 color: "white",
             }
       };
-      toastr.info('Current weather is '+ weather.currently.summary + '' + weather.currently.temperature + "°"); 
+      toastr.warning('Current weather is '+ weather.currently.summary + '' + weather.currently.temperature + "°"); 
       console.log('ApiCtrl', $scope.weather)
     });
   });
