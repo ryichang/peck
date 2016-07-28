@@ -121,7 +121,7 @@
       <div ng-repeat="post in posts | orderBy:'-created_at'"> -->
 
       <div ng-repeat="event in user.events | orderBy:'-created_at'">
-        <div class="col-sm-3 card" id="{{event.color}}" id={{event.urgent}}>
+        <div class="col-sm-3 card" id="{{event.color}}">
          <div ng-hide="event.editForm">
             <svg width="10" height="10" class="close-btn" ng-click="deleteEvent(event)">
                 <line y2="100%" x2="0" y1="0" x1="100%" stroke-width="1" stroke="#fff"></line>
@@ -135,7 +135,7 @@
              </div>
              <i class="ion-plus" style="float:right;" ng-click="eventShow(event)"></i>
             <!-- <div class="card-date">{{post.created_at | date: 'MMMM d'}}</div> -->
-            <h3>{{event.title}}</h3>
+            <h3 id={{event.urgent}}>{{event.title}}</h3>
             <p ng-bind-html="event.description | linky:'_blank'"></p>
         <!--     <p>{{event.description}}</p> -->
             <p>{{event.location.formatted_address}}</p>
