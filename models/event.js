@@ -12,6 +12,7 @@ var EventSchema = Schema({
   groupId: {type: Schema.Types.ObjectId, ref: 'Group'},
   comments         : [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
   color  : {type: String, default: "default"},
+  urgent  : {type: String, default: "default"},
 });
 
 

@@ -14,8 +14,7 @@ angular.module('peckbox')
         var momentDate = moment(data.events[index].date).utc().format('YYYY-MM-DD');
 
         if( moment(data.events[index].date).utc().format('YYYY-MM-DD') == moment().format('YYYY-MM-DD')){
-          data.events[index].color = "urgent";
-
+          data.events[index].urgent = "urgent";
         }
          $scope.user = data;
       }
