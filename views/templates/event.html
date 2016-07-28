@@ -128,14 +128,14 @@
                 <line y2="100%" x2="100%" y1="0%" x1="0%" stroke-width="1" stroke="#fff"></line>
             </svg>    
            <!--  <i class="fa fa-close pull-right" ng-click="deleteEvent(event)"></i> -->
-            <div class="card-date"><div id={{event.urgent}}>{{event.date | date: 'EEE MMM d @ hh:mma' : 'UTC'}}</div></div>
+            <div class="card-date" id={{event.urgent}}>{{event.date | date: 'EEE MMM d @ hh:mma' : 'UTC'}}</div>
            <!--  <div class="card-date">{{event.date}}</div> -->
             <div id="ribbon">
                 <div ng-show="event.comments.length>0" ng-click="eventShow(event)">{{event.comments.length}}</div>
              </div>
              <i class="ion-plus" style="float:right;" ng-click="eventShow(event)"></i>
             <!-- <div class="card-date">{{post.created_at | date: 'MMMM d'}}</div> -->
-            <h3 id={{event.urgent}}>{{event.title}}</h3>
+            <h3>{{event.title}}</h3>
             <p ng-bind-html="event.description | linky:'_blank'"></p>
         <!--     <p>{{event.description}}</p> -->
             <p>{{event.location.formatted_address}}</p>
