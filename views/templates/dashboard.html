@@ -287,16 +287,16 @@
                 <line y2="100%" x2="0" y1="0" x1="100%" stroke-width="1" stroke="#fff"></line>
                 <line y2="100%" x2="100%" y1="0%" x1="0%" stroke-width="1" stroke="#fff"></line>
             </svg>   
-            <div class="card-date">{{event.date | date: 'EEE MMM d @ hh:mma' : 'UTC'}}</div>
+            <div class="card-date" id={{event.urgent}}>{{event.date | date: 'EEE MMM d @ hh:mma' : 'UTC'}}</div>
             <div id="ribbon">
                 <div ng-show="event.comments.length>0" ng-click="eventShow(event)">{{event.comments.length}}</div>
              </div>
             <i class="ion-plus" style="float:right;" ng-click="eventShow(event)"></i>
-            <h3 id={{event.urgent}}>{{event.title}}</h3>
+            <h3>{{event.title}}</h3>
           <!--   <h3>{{event.date | date: 'hh:mma'}}</h3> -->
-            <p id={{event.urgent}} ng-bind-html="event.description | linky:'_blank'"></p>
+            <p ng-bind-html="event.description | linky:'_blank'"></p>
             <!-- <p>{{event.description}}</p> -->
-            <p id={{event.urgent}}>{{event.location.formatted_address}}</p>
+            <p>{{event.location.formatted_address}}</p>
             
              <div style="float:right">
              <svg height="14" width="14" value="default" ng-model="event.color" ng-click="test(event, 'default')">
