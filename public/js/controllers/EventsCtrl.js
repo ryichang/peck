@@ -12,10 +12,11 @@ angular.module('peckbox')
         var dd = today.getDate();
         var dateNow = moment().format('YYYY-MM-DD');
         var momentDate = moment(data.events[index].date).utc().format('YYYY-MM-DD');
+        var toastrDate = moment(data.events[index].date).utc().format('hh:mm');
 
         if( moment(data.events[index].date).utc().format('YYYY-MM-DD') == moment().format('YYYY-MM-DD')){
           data.events[index].urgent = "urgent";
-          toastr.warning('You have an event @ ' + momentDate);
+          toastr.warning('There is an event today @ ' + toastrDate);
         } else {
           data.events[index].urgent = "default";
         } 
