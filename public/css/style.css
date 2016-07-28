@@ -294,6 +294,7 @@ a {
 #urgent {
      animation: pulsate 3s infinite;
      background-color: rgba(255,235,0,1);
+     border: 1px solid #000;
     /* background-image: linear-gradient(
          to right top,
          transparent 33%,
