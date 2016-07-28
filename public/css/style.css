@@ -293,16 +293,16 @@ a {
 
 #urgent {
      /*animation: pulsate 3s infinite;*/
-    /* background-color: rgba(255,235,0,1);*/
-     background-image: linear-gradient(
+     background-color: rgba(255,235,0,1);
+    /* background-image: linear-gradient(
          to right top,
          transparent 33%,
          #454545 33%,
          #454545 66%,
          transparent 66%
      );
-     background-size: 3px 3px;
-     color: rgba(255,235,0,1);
+     background-size: 3px 3px;*/
+    /* color: rgba(255,235,0,1);*/
      animation: bounce 3s infinite;
       -webkit-animation: bounce 3s infinite;
       -moz-animation: bounce 3s infinite;
