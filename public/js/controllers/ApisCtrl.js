@@ -120,11 +120,11 @@ function success(position) {
                 color: "white",
             }
       };
-      toastr.warning('Current weather is '+ weather.currently.summary + '' + weather.currently.temperature + "°"); 
       console.log('ApiCtrl', $scope.weather)
     });
   });
-  console.log('Your current position is ' + coords.latitude + ' X ' + coords.longitude);
+  toastr.warning('Current weather is '+ weather.currently.summary + '' + weather.currently.temperature + "°"); 
+  // console.log('Your current position is ' + coords.latitude + ' X ' + coords.longitude);
 }
 
 function error(err) {  
