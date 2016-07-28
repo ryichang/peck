@@ -14,7 +14,7 @@ angular.module('peckbox')
         var momentDate = moment(data.events[index].date).utc().format('YYYY-MM-DD');
 
         if( moment(data.events[index].date).utc().format('YYYY-MM-DD') == moment().format('YYYY-MM-DD')){
-          data.events[index].urgent = "urgent";
+          data.events[index].color = "urgent";
         }
          $scope.user = data;
       }
@@ -96,6 +96,7 @@ angular.module('peckbox')
             date : $scope.event.date,
             userId: user._id,
             color: $scope.event.color,
+            urgent: $scope.event.urgent,
         };
         console.log("front is", body);
         $http.post('/api/events', body)
