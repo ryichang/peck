@@ -6,6 +6,8 @@ angular.module('peckbox')
   .controller('PostsCtrl', ['$scope', '$http', '$auth', 'Auth', '$location', '$routeParams', 'toastr', 'Post', '$q', function($scope, $http, $auth, Auth, $location, $routeParams, toastr, Post, $q) {
     $http.get('/api/me').success(function(data) {
       $scope.user = data;
+      var tasks = data.posts.length;
+      toastr.warning('You have ' + tasks + ' tasks!');
     });
 
 
