@@ -7,7 +7,11 @@ angular.module('peckbox')
     $http.get('/api/me').success(function(data) {
       $scope.user = data;
       var tasks = data.posts.length;
-      toastr.warning('You have ' + tasks + ' tasks!');
+      if (tasks = 1) {
+        toastr.warning('You have one task to complete!');
+      } else (tasks > 1){
+        toastr.warning('You have ' + tasks + ' tasks to complete!');
+      } 
     });
 
 
