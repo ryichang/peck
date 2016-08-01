@@ -11,7 +11,7 @@ angular.module('peckbox')
     $scope.group = {};
 
     $http.get('/api/groups').success(function(data){
-      console.log('group is', data)
+      // console.log('group is', data)
       $scope.groups = data;
     });
 
