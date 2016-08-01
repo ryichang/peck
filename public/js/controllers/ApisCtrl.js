@@ -8,22 +8,6 @@ angular.module('peckbox')
       $scope.user = data;
     });
 
-   
-//     $scope.myTickerItems = [
-//    {
-//      title: 'item 1 item 1 item 1 item 1 item 1 item 1 item 1',
-//      copy: 'amazing copy here'
-//    },
-//    {
-//      title: 'item 2',
-//      copy: 'wow, this is great'
-//    },
-//    {
-//      title: 'item 3',
-//      copy: 'hello angular'
-//    }
-// ]
-
   $scope.news={}
   $scope.types = ['hot'];         
   $scope.subredit="worldnews";      
@@ -47,43 +31,7 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
                     // console.log('news scope is', $scope.news)
                 });
 
- // $http.jsonp(url)
- //  $http({
- //          method: 'jsonp',
- //          url: 'https://api.nytimes.com/svc/topstories/v2/home.jsonp/?api-key=e4cbd64f281e46f882876736e874cff6&callback=homeTopStoriesCallback',
- //          })
- //      .success(function(err, response) {
- //        console.log(response);
- //      });
-
-//  var url ="https://www.reddit.com/r/aww/.json"
-//  $http.jsonp(url + '?jsoncallback=JSON_CALLBACK').success(function(data) {
-//      console.log(data);
-// })
-
  
-
-//  var url ="http://api.nytimes.com/svc/topstories/v2/reviews/home.jsonp?&offset=20&order=updated_date&api-key=e4cbd64f281e46f882876736e874cff6&responce-format=jsonp"
-//  $http.jsonp(url + '&callback=JSON_CALLBACK').success(function(data) {
-//      console.log(data);
-// })
-
- // var api = 'http://api.nytimes.com/svc/topstories/v2/reviews/home.jsonp?&offset=20&order=updated_date&api-key=e4cbd64f281e46f882876736e874cff6&responce-format=jsonp&callback=homeTopStoriesCallback'; 
- //                $http.jsonp(api).success(function(data){
- //                    console.log('response', data)
- //                    $scope.results = data.results;
- //                });
-// var api = 'https://hacker-news.firebaseio.com/v0/item/8863.json?print=pretty&callback=JSON_CALLBACK'; 
-//                 $http.jsonp(api).success(function(data){
-//                     console.log('response', data)
-//                     $scope.results = data.results;
-//                 });
-
-// var api = 'https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty&callback=JSON_CALLBACK'; 
-//                 $http.jsonp(api).success(function(data){
-//                     console.log('response', data)
-//                     $scope.results = data.results;
-//                 });
 
 //WEATHER
 navigator.geolocation.getCurrentPosition(success, error);
@@ -119,79 +67,15 @@ function success(position) {
             }
       };
       toastr.info('Current weather is '+ response.currently.summary + ' ' + 'at '+ response.currently.temperature + "°F." + ' ' + response.daily.summary); 
-      console.log('ApiCtrl', $scope.weather)
+      // console.log('ApiCtrl', $scope.weather)
     });
   });
-  console.log('Your current position is ' + coords.latitude + ' X ' + coords.longitude);
+  // console.log('Your current position is ' + coords.latitude + ' X ' + coords.longitude);
 }
 
 function error(err) {  
   console.warn('ERROR(' + err.code + '): ' + err.message);
 }
-
- // if (navigator.geolocation) {
- //    navigator.geolocation.getCurrentPosition(function(position){
- //      $scope.$apply(function(){
- //        $scope.position = position;
- //        // console.log('position is', position);
- //        var lat = position.coords.latitude;
- //        var lon = position.coords.longitude;    
- //        var query = lat + "," + lon;
- //        var url = "https://api.wunderground.com/api/df7130ecdd31c499/geolookup/q/";
-     
- //        $http.jsonp(url + query + ".json" +"?callback=JSON_CALLBACK").success(function(response){
- //          $scope.location = response;
- //          // console.log('ApiCtrl', $scope.location)
- //        });
- //      });
- //    });
- //  }
-
- //  if (navigator.geolocation) {
- //    navigator.geolocation.getCurrentPosition(function(position){
- //      $scope.$apply(function(){
- //        $scope.position = position;
- //        // console.log('position is', position);
- //        var lat = position.coords.latitude;
- //        var lon = position.coords.longitude;    
- //        var query = "lat=" + lat + "&lon=" + lon;
- //        var url ="https://api.forecast.io/forecast/"
- //        var key = "598aeaa830f0e56213a7a3401ab14bf1/"
- //        $http.jsonp(url + key + lat + "," + lon + "?callback=JSON_CALLBACK").success(function(response){
- //          $scope.weather = response;
- //          $scope.CurrentWeather = {
- //                forecast: {
- //                    iconSize: 20,
- //                    color: "white",
- //                }
- //          };
-         
- //          console.log('ApiCtrl', $scope.weather)
- //        });
- //      });
- //    });
- //  }
-
-
-  //   if (navigator.geolocation) {
-  //   navigator.geolocation.getCurrentPosition(function(position){
-  //     $scope.$apply(function(){
-  //       $scope.position = position;
-  //       console.log('position is', position);
-  //       var lat = position.coords.latitude;
-  //       var lon = position.coords.longitude;    
-  //       var query = "lat=" + lat + "&lon=" + lon;
-  //       var url = "https://api.openweathermap.org/data/2.5/";
-  //       var unit = "&units=imperial";
-  //       var key = "&appid=325eb4a6e7af80ea40b557e093f01b04";
-  //       // var key = "&appid=c55ec823be46f88fbcf55db70cc8e772/";
-  //       $http.jsonp(url+ "weather?" + query + unit + key + "&callback=JSON_CALLBACK").success(function(response){
-  //         $scope.weather = response;
-  //         console.log('ApiCtrl', $scope.weather)
-  //       });
-  //     });
-  //   });
-  // }
 
 
   // Clock

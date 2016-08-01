@@ -24,35 +24,18 @@ angular.module('peckbox')
       }
       console.log('momentDate is', momentDate)
       console.log('dateNow is', dateNow)
-    // $scope.user = data;
+  
     });
 
 
     $scope.event = {};
    
-    // $scope.getDatetime = new Date();
-
-    // if (event.date = getDateTime) {
-    //   event.color = "urgent";
-    //   console.log('getDateTime is', getDateTime);
-    // }
     $scope.check = function(){
       if($scope.event.date <= Date.now()){
         event.color = "urgent"
       }
     }
 
-    // $scope.urgent = function(event, urgent)
-    //   {
-    //     if (event.date <= Date.now()){
-    //       $scope.urgent = "urgent";
-    //     } else {
-    //       $scope.urgent = "default";
-    //     }
-        
-    //   };
-
-      
 
     $scope.test = function(event, color) {
         // console.log(event);
@@ -102,11 +85,11 @@ angular.module('peckbox')
             color: $scope.event.color,
             urgent: $scope.event.urgent,
         };
-        console.log("front is", body);
+        // console.log("front is", body);
         $http.post('/api/events', body)
         .success(function(response){
             toastr.success('You have successfully created an event!');
-            console.log('response', response);
+            // console.log('response', response);
              $scope.user.events.unshift(response);
         })
         .error(function(response){
@@ -124,7 +107,7 @@ angular.module('peckbox')
             color: $scope.event.color,
             userId: user._id,
         };
-        console.log('edit', $scope.event);
+        // console.log('edit', $scope.event);
     };
 
     $scope.updateEvent = function(event){
@@ -138,16 +121,7 @@ angular.module('peckbox')
        // console.log('edit', event);
      };
 
-   // $scope.createEvent = function() {
-   //    console.log('scope.event is ', $scope.event);
-   //    $scope.event.owner = $scope.currentUser;
-   //    var event = new Event($scope.event);
-   //    event.$save(function(data) {
-   //      $scope.events.unshift(data);
-   //      $scope.event = {};
-   //      console.log('after save createEventForm is: ', $scope.createEvent);
-   //    });
-   // };
+  
 
     $scope.deleteEvent = function(event) {
       $http.delete('/api/events/' + event._id)
@@ -180,24 +154,6 @@ angular.module('peckbox')
          $window.history.back();
       };
 
-        // $scope.tabs = [{
-        //         title: 'Comment',
-        //         url: 'comment.tpl.html'
-        //     },{
-        //         title: 'Map',
-        //         url: 'map.tpl.html'
-        // }];
-
-        // $scope.currentTab = 'map.tpl.html';
-
-        // $scope.onClickTab = function (tab) {
-        //     $scope.currentTab = tab.url;
-        // };
-        
-        // $scope.isActiveTab = function(tabUrl) {
-        //     return tabUrl == $scope.currentTab;
-        // };
-
     Event.get({ id: $routeParams.id }, function(event) {
       $scope.event = event;
       $scope.comment = event.comments;
@@ -220,7 +176,7 @@ angular.module('peckbox')
         
         $http.put('/api/events/'+ event._id, event)
         .success(function(response){
-         console.log(response);
+         // console.log(response);
        });
     };
 
@@ -233,7 +189,7 @@ angular.module('peckbox')
                 color: $scope.event.color,
                 userId: user._id,
             };
-            console.log('edit', $scope.event);
+            // console.log('edit', $scope.event);
         };
 
     $scope.updateEvent = function(event){
@@ -241,7 +197,7 @@ angular.module('peckbox')
        $http.put('/api/events/'+ event._id, event)
        .success(function(response){
          toastr.warning('You have successfully updated an event!');
-         console.log(response)
+         // console.log(response)
          event.editForm = false;
        });
        // console.log('edit', event);
@@ -258,9 +214,9 @@ angular.module('peckbox')
       $http.post('/api/event/' + event._id + '/comments', config)
       .success(function(response){
         toastr.success('You have successfully created a comment!');
-        console.log('response is', response)
+        // console.log('response is', response)
         $scope.event.comments.unshift(response);
-        console.log('event comment is', event.comments)
+        // console.log('event comment is', event.comments)
       })
       .error(function(response){
         console.log('err', response)
@@ -284,7 +240,7 @@ angular.module('peckbox')
      $http.put('/api/events/' + comment.event + '/comments/' + comment._id)
      .success(function(response){
        toastr.warning('You have successfully updated a comment!');
-       console.log(response);
+       // console.log(response);
        comment.editForm = false;
      });
     };
@@ -305,7 +261,7 @@ angular.module('peckbox')
         
         $http.put('/api/events/'+ comment.event + '/comments/' + comment._id, comment)
         .success(function(response){
-         console.log(response);
+         // console.log(response);
        });
     };
 
