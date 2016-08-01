@@ -10,21 +10,6 @@ angular.module('peckbox')
 
     $scope.group = {};
 
-
-
-    // if ($scope.group.owner == $scope.user._id){
-    //    console.log('scope group is', $scope.group)
-    //    console.log('group owner is', $scope.group.owner)
-    //    console.log('scope user id is', $scope.user._id)
-    //      $scope.Owner = true
-
-    //      console.log('owner', $scope.Owner) 
-    //    }else {
-    //      $scope.Owner = false
-    //      console.log('false', $scope.Owner)
-    //    }
-
-
     $http.get('/api/groups').success(function(data){
       console.log('group is', data)
       $scope.groups = data;
@@ -64,7 +49,7 @@ angular.module('peckbox')
         $http.post('/api/groups', body)
         .success(function(response){
             toastr.success('You have successfully created a group!');
-            console.log('response', response);
+            // console.log('response', response);
              $scope.groups.unshift(response);
         })
         .error(function(response){
@@ -79,7 +64,7 @@ angular.module('peckbox')
             date : $scope.group.date,
             color: $scope.group.color,
         };
-        console.log('edit', $scope.group);
+        // console.log('edit', $scope.group);
     };
 
     $scope.updateGroup = function(group){
@@ -87,27 +72,16 @@ angular.module('peckbox')
        $http.put('/api/groups/'+ group._id, group)
        .success(function(response){
          toastr.warning('You have successfully updated a group!');
-         console.log(response)
+         // console.log(response)
          group.editForm = false;
        });
        // console.log('edit', event);
      };
 
-   // $scope.createEvent = function() {
-   //    console.log('scope.event is ', $scope.event);
-   //    $scope.event.owner = $scope.currentUser;
-   //    var event = new Event($scope.event);
-   //    event.$save(function(data) {
-   //      $scope.events.unshift(data);
-   //      $scope.event = {};
-   //      console.log('after save createEventForm is: ', $scope.createEvent);
-   //    });
-   // };
-
     $scope.deleteGroup = function(group) {
       $http.delete('/api/groups/' + group._id)
         .success(function(data) {
-          console.log('data is', data)
+          // console.log('data is', data)
           toastr.error('You have successfully deleted a group!');
           var index = $scope.groups.indexOf(group);
           $scope.groups.splice(index,1);
@@ -121,8 +95,6 @@ angular.module('peckbox')
       $location.path('/groups/' + group._id);
     
     };
-
-
 
   }])
 
@@ -138,48 +110,24 @@ angular.module('peckbox')
        
         if ($scope.group.owner == $scope.user._id){
            $scope.Owner = true
-           console.log('owner', $scope.Owner) 
+           // console.log('owner', $scope.Owner) 
          }else {
            $scope.Owner = false
-           console.log('false', $scope.Owner)
+           // console.log('false', $scope.Owner)
          }
 
         for (var user in users){
-          console.log('users[user] id is', users[user]._id)
+          // console.log('users[user] id is', users[user]._id)
           if(users[user]._id == $scope.user._id){
             $scope.userFound = true;
-            console.log('userFound is', $scope.userFound)
+            // console.log('userFound is', $scope.userFound)
             break;
           } else {
             $scope.userFound = false;
-            console.log('userFound is', $scope.userFound)
+            // console.log('userFound is', $scope.userFound)
           }
         }
 
-
-      // for (var user in users){
-      //   console.log('user is', user)
-      //   console.log('users are', users)
-      //   if(users[user] == $scope.user._id){
-      //     $scope.userFound = true;
-      //     break;
-      //   } else {
-      //     $scope.userFound = false;
-      //   }
-      // }
-
-      // for (var userIndex in users) {
-      //     console.log('userIndex is', users[userIndex])
-      //     console.log('user Id is', $scope.user._id)
-      //     if (users[userIndex] == $scope.user._id){
-      //       $scope.userFound = true;
-      //        console.log('userFound is', $scope.userFound)
-      //        break;
-      //     } else {
-      //       $scope.userFound = false;
-      //       console.log('userFound is', $scope.userFound)
-      //     }
-      // }
       });
 
     });
@@ -192,29 +140,23 @@ angular.module('peckbox')
          $window.history.back();
       };
 
-    
-
-    
-
     $scope.joinGroup = function(group, user){
-      console.log('group is', group)
-      console.log('user is', user)
+      // console.log('group is', group)
+      // console.log('user is', user)
 
       var body = {
         users: user._id,
       }
 
-      console.log('body is', body)
+      // console.log('body is', body)
 
       $http.post('/api/groups/' + group._id, body)
       .success(function(response){
         toastr.success('You have successfully joined a group!');
-            console.log('response', response);
+            // console.log('response', response);
             // $scope.group.users.unshift(response.users[0].displayName);
              // $scope.group.users.unshift(response.users[0]);
              $window.location.reload();
-            
-
              // $http.post('/api/groups')
              // $scope.groups.unshift(response);
       })
@@ -225,21 +167,20 @@ angular.module('peckbox')
     };
 
     $scope.unjoinGroup = function(group, user){
-      console.log('group is', group)
-      console.log('user is', user)
+      // console.log('group is', group)
+      // console.log('user is', user)
 
       var body = {
          userId: user._id,
          groupId: group._id,
       }
 
-      console.log('body is', body)
+      // console.log('body is', body)
 
       $http.put('/api/groups/' + group._id + '/unjoin', body)
       .success(function(response){
         toastr.success('You have successfully unjoined a group!');
-            console.log('response', response);
-
+            // console.log('response', response);
             var users = $scope.group.users
             for (var userIndex in users){
               if(users[userIndex] == user._id){
@@ -271,7 +212,7 @@ angular.module('peckbox')
         
         $http.put('/api/groups/'+ group._id, group)
         .success(function(response){
-         console.log(response);
+         // console.log(response);
        });
     };
 
@@ -333,7 +274,7 @@ angular.module('peckbox')
          // console.log('group comment is', group.comments);
        })
        .error(function(response){
-         // console.log('err', response);
+         console.log('err', response);
        });
      };
 
@@ -392,9 +333,9 @@ angular.module('peckbox')
       $http.post('/api/group/' + group._id + '/events', config)
       .success(function(response){
         toastr.success('Event has been successfully added in ' + group.title);
-        console.log('event added is', response);
+        // console.log('event added is', response);
         $scope.group.events.unshift(response);
-        console.log('group event is', group.events);
+        // console.log('group event is', group.events);
       })
       .error(function(response){
        
