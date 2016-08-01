@@ -1,14 +1,14 @@
 'use strict';
 
 /* API Controllers */
-
+var config = require('../config.js');
 angular.module('peckbox')
   .controller('ApisCtrl', ['$scope', '$http', '$auth', 'Auth', 'toastr', '$interval',  function($scope, $http, $auth, Auth, toastr, $interval) {
     $http.get('/api/me').success(function(data) {
       $scope.user = data;
     });
 
-var config = require('../config.js');
+
 var NWTsecret = config.NWT_SECRET;
    
 //     $scope.myTickerItems = [
