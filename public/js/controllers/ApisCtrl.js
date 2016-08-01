@@ -8,7 +8,6 @@ angular.module('peckbox')
       $scope.user = data;
     });
 
-var config = require('../config.js');
 var NWTsecret = config.NWT_SECRET;
    console.log('NWTsecret', NWTsecret);
 //     $scope.myTickerItems = [
