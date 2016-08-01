@@ -28,7 +28,7 @@ angular.module('peckbox')
     $scope.signup = function() {
       $auth.signup($scope.user)
         .then(function(response) {
-          console.log(response)
+          // console.log(response)
           $auth.setToken(response);
           $scope.isAuthenticated();
           $scope.user = {};
@@ -36,7 +36,7 @@ angular.module('peckbox')
           $location.path('/splash');
         })
         .catch(function(response) {
-          console.log(response)
+          // console.log(response)
         });
     };
 
@@ -50,7 +50,7 @@ angular.module('peckbox')
           $location.path('/splash');
         })
         .catch(function(response) {
-          console.log(response)
+          // console.log(response)
         });
     };
 
@@ -62,20 +62,6 @@ angular.module('peckbox')
           $location.path('/');
         });
     };
-
-    // $scope.authenticate = function(provider) {
-    //   $auth.authenticate(provider).then(function() {
-    //     console.log('auth.cu is: ', Auth.currentUser);
-    //     $scope.currentUser = Auth.currentUser();
-    //     $scope.user = $scope.currentUser;
-    //     console.log('navbar currentuser is: ', $scope.currentUser);
-    //     $('#login-modal').modal('hide');
-    //     $location.path('/profile'); 
-    //   });
-    // };
-
-
-
    
 
 
