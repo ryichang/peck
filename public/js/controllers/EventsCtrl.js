@@ -6,7 +6,7 @@ angular.module('peckbox')
   .controller('EventsCtrl', ['$scope', '$http', '$auth', 'Auth', 'toastr', '$location', function($scope, $http, $auth, Auth, toastr, $location) {
     $http.get('/api/me').success(function(data) {
       // $scope.user = data;
-      console.log('data is', data);
+      // console.log('data is', data);
       for (var index in data.events){
         var today = new Date();
         var dd = today.getDate();
@@ -22,8 +22,8 @@ angular.module('peckbox')
         } 
          $scope.user = data;
       }
-      console.log('momentDate is', momentDate)
-      console.log('dateNow is', dateNow)
+      // console.log('momentDate is', momentDate)
+      // console.log('dateNow is', dateNow)
   
     });
 
