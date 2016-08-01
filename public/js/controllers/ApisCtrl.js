@@ -8,6 +8,8 @@ angular.module('peckbox')
       $scope.user = data;
     });
 
+var config = require('../config.js');
+var NWTsecret = config.NWT_SECRET;
    
 //     $scope.myTickerItems = [
 //    {
@@ -39,7 +41,7 @@ angular.module('peckbox')
     toastr.warning('Loading Top Worldnews from Reddit');   
       });
 
-var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb58d5412a54799e82ad086c0387669:5:74719242&responce-format=.jsonp&callback=JSON_CALLBACK'; 
+var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=' + NWTsecret + '&responce-format=.jsonp&callback=JSON_CALLBACK'; 
                 $http.jsonp(api).success(function(data){
                     // console.log('response', data)
                     $scope.news = data.results;
