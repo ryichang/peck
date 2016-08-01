@@ -17,25 +17,6 @@ angular.module('peckbox')
 
     $scope.post = {};
 
-    // $http.get('/api/posts')
-    //   .success(function(data) {
-    //     $scope.posts = data;
-    //   })
-    //   .error(function(data) {
-    //     console.log('Error: ' + data);
-    //   });
-
-    // $scope.createPost = function() {
-    //   $http.post('/api/posts', $scope.post)
-    //     .success(function(response) {
-    //       // $scope.user.posts.unshift(response);
-    //       $scope.user.posts.unshift(response);
-    //       $scope.post = {};
-    //     })
-    //     .error(function(response) {
-    //       console.log(response);
-    //     });
-    // };
     $scope.test = function(post, color) {
 
         console.log(post);
@@ -52,7 +33,7 @@ angular.module('peckbox')
         
         $http.put('/api/posts/'+ post._id, post)
         .success(function(response){
-         console.log(response);
+         // console.log(response);
        });
     };
 
@@ -70,7 +51,7 @@ angular.module('peckbox')
         $http.post('/api/posts', config)
         .success(function(response){
             toastr.success('You have successfully created a task!');
-            console.log('response', response);
+            // console.log('response', response);
              $scope.user.posts.unshift(response);
         })
         .error(function(response){
@@ -79,22 +60,6 @@ angular.module('peckbox')
 
     };
 
-//go to edit page
-  //   $scope.editPost = function(post) {
-  //       $scope.post = {
-  //           _id: post._id,
-  //           title: post.title,
-  //           body: post.body
-  //       };
-  //   $location.path('/posts/' + $scope.post._id);
-  //   $scope.post = {
-  //           _id: post._id,
-  //           title: post.title,
-  //           body: post.body
-  //       };
-  //   console.log('edit scope post', $scope.post);
-
-  // };
 
     $scope.editPost = function(post){
         $scope.post = {
@@ -103,7 +68,7 @@ angular.module('peckbox')
             title: post.title,
             body: post.body
         };
-        console.log('edit', $scope.post);
+        // console.log('edit', $scope.post);
     };
 
 
@@ -113,7 +78,7 @@ angular.module('peckbox')
        $http.put('/api/posts/'+ post._id, post)
        .success(function(response){
          toastr.warning('You have successfully updated a task!');
-         console.log(response)
+         // console.log(response)
          post.editForm = false;
        });
        // console.log('edit', post);
@@ -127,8 +92,6 @@ angular.module('peckbox')
           toastr.error('You have successfully deleted a task!');
           var index = $scope.user.posts.indexOf(post);
           $scope.user.posts.splice(index,1);
-
-
         })
         .error(function(data) {
           console.log('Error: ' + data);
@@ -136,51 +99,11 @@ angular.module('peckbox')
     };
 
 
-    
-
-    // $scope.postShow= function(post) {
-    //   var promise = fetchPostWithId(post._id)
-    //   promise.then(function(post){
-    //     console.log('post is', post)
-    //     $scope.singlePost = post
-    //     console.log('$scope post is', $scope.post)
-    //     return post
-    //   }).then(function(post){
-    //     $location.path('/posts/' + $scope.post._id + '/comments');
-    //   })
-
-    
-    // };
-
-    // $scope.post = Post.get({ id: $routeParams.id }, function(post) {
-    //   console.log('outside', $scope.post);
-    //   $scope.post = post;
-    // });
-    
-    // function fetchPostWithId(postId){
-    //   return $q(function(resolve, reject){
-    //     Post.get({ id:postId}, function(post){
-    //       if(post){
-    //          resolve(post);
-    //       } else {
-    //          reject();
-    //       }
-    //     }) 
-    //   })
-    // }
-
     $scope.postShow = function(post) {
       $location.path('/posts/' + post._id + '/comments');
   
-    }
+    };
 
-
-
-//     app.controller('ticketController', ['$scope', '$routeParams',
-//    function ($scope, $routeParams) {
-//       //Get ID out of current URL
-//       var currentId = $routeParams.id;
-// }]);
 
   }])
   .controller('PostShowCtrl', ['$scope', '$http', '$auth', 'Auth', '$location', '$routeParams', 'toastr', 'Post', '$window','$q', function($scope, $http, $auth, Auth, $location, $routeParams, toastr, Post, $window, $q) {
@@ -198,12 +121,12 @@ angular.module('peckbox')
     Post.get({ id: $routeParams.id }, function(post) {
       $scope.post = post;
       $scope.comment = post.comments;
-      console.log('outside', post);
+      // console.log('outside', post);
     });
 
     $scope.test = function(post, color) {
 
-        console.log(post);
+        // console.log(post);
         // overriding post model with color (String)
         if (color === "red") {
           post.color = "red";
@@ -217,7 +140,7 @@ angular.module('peckbox')
         
         $http.put('/api/posts/'+ post._id, post)
         .success(function(response){
-         console.log(response);
+         // console.log(response);
        });
     };
 
@@ -228,7 +151,7 @@ angular.module('peckbox')
             title: post.title,
             body: post.body
         };
-        console.log('edit', $scope.post);
+        // console.log('edit', $scope.post);
     };
 
     $scope.updatePost = function(post){
@@ -237,7 +160,7 @@ angular.module('peckbox')
        $http.put('/api/posts/'+ post._id, post)
        .success(function(response){
          toastr.warning('You have successfully updated a task!');
-         console.log(response)
+         // console.log(response)
          post.editForm = false;
        });
        // console.log('edit', post);
@@ -254,9 +177,9 @@ angular.module('peckbox')
        $http.post('/api/post/' + post._id + '/comments', config)
        .success(function(response){
          toastr.success('You have successfully created a comment!');
-         console.log('response is', response)
+         // console.log('response is', response)
          $scope.post.comments.unshift(response);
-         console.log('post comment is', post.comments)
+         // console.log('post comment is', post.comments)
        })
        .error(function(response){
          console.log('err', response)
@@ -280,7 +203,7 @@ angular.module('peckbox')
       $http.put('/api/posts/' + comment.post + '/comments/' + comment._id)
       .success(function(response){
         toastr.warning('You have successfully updated a comment!');
-        console.log(response);
+        // console.log(response);
         comment.editForm = false;
       });
      };
@@ -301,7 +224,7 @@ angular.module('peckbox')
          
          $http.put('/api/posts/'+ comment.post + '/comments/' + comment._id, comment)
          .success(function(response){
-          console.log(response);
+          // console.log(response);
         });
      };
 
