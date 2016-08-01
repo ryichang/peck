@@ -26,7 +26,7 @@ angular.module('peckbox')
         
         $http.put('/api/notes/'+ note._id, note)
         .success(function(response){
-         console.log(response);
+         // console.log(response);
        });
     };
 
@@ -42,7 +42,7 @@ angular.module('peckbox')
         $http.post('/api/notes', config)
         .success(function(response){
             toastr.success('You have successfully created a note!');
-            console.log('response', response);
+            // console.log('response', response);
             $scope.user.notes.unshift(response);
         })
         .error(function(response){
@@ -57,7 +57,7 @@ angular.module('peckbox')
             _id: note._id,
             body: note.body
         };
-        console.log('edit', $scope.note);
+        // console.log('edit', $scope.note);
     };
 
     $scope.updateNote = function(note){
@@ -65,7 +65,7 @@ angular.module('peckbox')
        $http.put('/api/notes/'+ note._id, note)
        .success(function(response){
          toastr.warning('You have successfully edited a note!');
-         console.log(response)
+         // console.log(response)
          note.editForm = false;
        });
      };
@@ -86,7 +86,7 @@ angular.module('peckbox')
 
     $scope.noteShow = function(note) {
       $location.path('/notes/' + note._id + '/comments');
-      console.log(note);
+      // console.log(note);
     };
 
 
@@ -103,7 +103,7 @@ angular.module('peckbox')
      Note.get({ id: $routeParams.id }, function(note) {
 
        $scope.note = note;
-       console.log(note)
+       // console.log(note)
      });
 
     //go back button
@@ -114,7 +114,7 @@ angular.module('peckbox')
     Note.get({ id: $routeParams.id }, function(note) {
       $scope.note = note;
       $scope.comment = note.comments;
-      console.log('outside', note);
+      // console.log('outside', note);
     });
 
     $scope.test = function(note, color) {
@@ -133,7 +133,7 @@ angular.module('peckbox')
         
         $http.put('/api/notes/'+ note._id, note)
         .success(function(response){
-         console.log(response);
+         // console.log(response);
        });
     };
 
@@ -143,7 +143,7 @@ angular.module('peckbox')
             _id: note._id,
             body: note.body
         };
-        console.log('edit', $scope.note);
+        // console.log('edit', $scope.note);
     };
 
     $scope.updateNote = function(note){
@@ -152,7 +152,7 @@ angular.module('peckbox')
        $http.put('/api/notes/'+ note._id, note)
        .success(function(response){
          toastr.warning('You have successfully updated a task!');
-         console.log(response)
+         // console.log(response)
          note.editForm = false;
        });
        // console.log('edit', note);
@@ -169,9 +169,9 @@ angular.module('peckbox')
        $http.post('/api/note/' + note._id + '/comments', config)
        .success(function(response){
          toastr.success('You have successfully created a comment!');
-         console.log('response is', response)
+         // console.log('response is', response)
          $scope.note.comments.unshift(response);
-         console.log('note comment is', note.comments)
+         // console.log('note comment is', note.comments)
        })
        .error(function(response){
          console.log('err', response)
@@ -195,7 +195,7 @@ angular.module('peckbox')
       $http.put('/api/notes/' + comment.note + '/comments/' + comment._id)
       .success(function(response){
         toastr.warning('You have successfully updated a comment!');
-        console.log(response);
+        // console.log(response);
         comment.editForm = false;
       });
      };
@@ -216,7 +216,7 @@ angular.module('peckbox')
          
          $http.put('/api/notes/'+ comment.note + '/comments/' + comment._id, comment)
          .success(function(response){
-          console.log(response);
+          // console.log(response);
         });
      };
      

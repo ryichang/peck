@@ -36,7 +36,7 @@ angular.module('peckbox')
           $location.path('/splash');
         })
         .catch(function(response) {
-          // console.log(response)
+          console.log(response)
         });
     };
 
@@ -50,7 +50,7 @@ angular.module('peckbox')
           $location.path('/splash');
         })
         .catch(function(response) {
-          // console.log(response)
+          console.log(response)
         });
     };
 
