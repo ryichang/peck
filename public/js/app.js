@@ -23,6 +23,11 @@ angular.module('peckbox', ['peckbox.services',
         controller: 'ApisCtrl'
       });
 
+      $routeProvider.when('/', {
+        templateUrl: 'templates/splash',
+        controller: 'WeatherCtrl'
+      });
+
 
       // $routeProvider.when('/', {
       //         templateUrl: 'templates/splash',
