@@ -1,44 +1,5 @@
 $(document).ready(function(){
 
-// $(window).scroll(function() {
-//   if ($(document).scrollTop() > 50) {
-//     $('navbar').addClass('shrink');
-//   } else {
-//     $('navbar').removeClass('shrink');
-//   }
-// });
-
-// $(function() {
-
-//             $.ajax({
-//                 url: "http://cors.io/?u=https://api.fantasydata.net/nba/v2/JSON/News",
-//                 beforeSend: function(xhrObj){
-//                     // Request headers
-//                     xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","2b9f1a534dd54c359e101c94bc7547aa");
-//                 },
-//                 type: "GET",
-//                 dataType: 'json',
-//             })
-//             .done(function(data) {
-//                 alert("success");
-//             })
-//             .fail(function() {
-//                 alert("error");
-//             });
-//         });
-
-// var url = "https://api.nytimes.com/svc/topstories/v2/home.json";
-// url += '?' + $.param({
-//   'api-key': "e4cbd64f281e46f882876736e874cff6",
-//   'callback': "homeTopStoriesCallback"
-// });
-// $.ajax({
-//   url: url,
-//   method: 'GET',
-// }).done(function(result) {
-//   console.log(result);
-// }).fail(function(err) {
-// });
 
 $('.text-1').children('p').each(function(index){
   var blinkInt=setInterval(function(){},1000);
@@ -96,16 +57,6 @@ $('.text-1').children('p').each(function(index){
 		$(".year").html(yr);
 	},1000);
 
-
-
-// $('[data-toggle=offcanvas]').click(function() {
-//   	$(this).toggleClass('visible-xs text-center');
-//     $(this).find('i').toggleClass('glyphicon-chevron-right glyphicon-chevron-left');
-//     $('.row-offcanvas').toggleClass('active');
-//     $('#lg-menu').toggleClass('hidden-xs').toggleClass('visible-xs');
-//     $('#xs-menu').toggleClass('visible-xs').toggleClass('hidden-xs');
-//     $('#btnShow').toggle();
-// });
 
 
 });
