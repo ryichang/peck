@@ -85,49 +85,49 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
 //                     $scope.results = data.results;
 //                 });
 
-//WEATHER API
-// navigator.geolocation.getCurrentPosition(success, error);
-// function success(position) {  
-//   var coords = position.coords;
-//   $scope.$apply(function(){
-//         $scope.position = position;
-//         // console.log('position is', position);
-//         var lat = position.coords.latitude;
-//         var lon = position.coords.longitude;    
-//         var query = lat + "," + lon;
-//         var url = "https://api.wunderground.com/api/df7130ecdd31c499/geolookup/q/";
+//WEATHER
+navigator.geolocation.getCurrentPosition(success, error);
+function success(position) {  
+  var coords = position.coords;
+  $scope.$apply(function(){
+        $scope.position = position;
+        // console.log('position is', position);
+        var lat = position.coords.latitude;
+        var lon = position.coords.longitude;    
+        var query = lat + "," + lon;
+        var url = "https://api.wunderground.com/api/df7130ecdd31c499/geolookup/q/";
      
-//         $http.jsonp(url + query + ".json" +"?callback=JSON_CALLBACK").success(function(response){
-//           $scope.location = response;
-//           // console.log('ApiCtrl', $scope.location)
-//         });
-//       });
-//   $scope.$apply(function(){
-//     $scope.position = position;
-//     // console.log('position is', position);
-//     var lat = position.coords.latitude;
-//     var lon = position.coords.longitude;    
-//     var query = "lat=" + lat + "&lon=" + lon;
-//     var url ="https://api.forecast.io/forecast/";
-//     var key = "598aeaa830f0e56213a7a3401ab14bf1/";
-//     $http.jsonp(url + key + lat + "," + lon + "?callback=JSON_CALLBACK").success(function(response){
-//       $scope.weather = response;
-//       $scope.CurrentWeather = {
-//             forecast: {
-//                 iconSize: 20,
-//                 color: "white",
-//             }
-//       };
-//       toastr.info('Current weather is '+ response.currently.summary + ' ' + 'at '+ response.currently.temperature + "°F." + ' ' + response.daily.summary); 
-//       console.log('ApiCtrl', $scope.weather)
-//     });
-//   });
-//   console.log('Your current position is ' + coords.latitude + ' X ' + coords.longitude);
-// }
+        $http.jsonp(url + query + ".json" +"?callback=JSON_CALLBACK").success(function(response){
+          $scope.location = response;
+          // console.log('ApiCtrl', $scope.location)
+        });
+      });
+  $scope.$apply(function(){
+    $scope.position = position;
+    // console.log('position is', position);
+    var lat = position.coords.latitude;
+    var lon = position.coords.longitude;    
+    var query = "lat=" + lat + "&lon=" + lon;
+    var url ="https://api.forecast.io/forecast/";
+    var key = "598aeaa830f0e56213a7a3401ab14bf1/";
+    $http.jsonp(url + key + lat + "," + lon + "?callback=JSON_CALLBACK").success(function(response){
+      $scope.weather = response;
+      $scope.CurrentWeather = {
+            forecast: {
+                iconSize: 20,
+                color: "white",
+            }
+      };
+      toastr.info('Current weather is '+ response.currently.summary + ' ' + 'at '+ response.currently.temperature + "°F." + ' ' + response.daily.summary); 
+      console.log('ApiCtrl', $scope.weather)
+    });
+  });
+  console.log('Your current position is ' + coords.latitude + ' X ' + coords.longitude);
+}
 
-// function error(err) {  
-//   console.warn('ERROR(' + err.code + '): ' + err.message);
-// }
+function error(err) {  
+  console.warn('ERROR(' + err.code + '): ' + err.message);
+}
 
  // if (navigator.geolocation) {
  //    navigator.geolocation.getCurrentPosition(function(position){
@@ -211,51 +211,7 @@ function itsaclock(){
 setTimeout(itsaclock, 2000);
 
 
-}])
-
-.controller('WeatherCtrl', ['$scope', '$http', '$auth', 'Auth', 'toastr', '$interval',  function($scope, $http, $auth, Auth, toastr, $interval) {
-    navigator.geolocation.getCurrentPosition(success, error);
-    function success(position) {  
-      var coords = position.coords;
-      $scope.$apply(function(){
-            $scope.position = position;
-            // console.log('position is', position);
-            var lat = position.coords.latitude;
-            var lon = position.coords.longitude;    
-            var query = lat + "," + lon;
-            var url = "https://api.wunderground.com/api/df7130ecdd31c499/geolookup/q/";
-         
-            $http.jsonp(url + query + ".json" +"?callback=JSON_CALLBACK").success(function(response){
-              $scope.location = response;
-              // console.log('ApiCtrl', $scope.location)
-            });
-          });
-      $scope.$apply(function(){
-        $scope.position = position;
-        // console.log('position is', position);
-        var lat = position.coords.latitude;
-        var lon = position.coords.longitude;    
-        var query = "lat=" + lat + "&lon=" + lon;
-        var url ="https://api.forecast.io/forecast/";
-        var key = "598aeaa830f0e56213a7a3401ab14bf1/";
-        $http.jsonp(url + key + lat + "," + lon + "?callback=JSON_CALLBACK").success(function(response){
-          $scope.weather = response;
-          $scope.CurrentWeather = {
-                forecast: {
-                    iconSize: 20,
-                    color: "white",
-                }
-          };
-          toastr.info('Current weather is '+ response.currently.summary + ' ' + 'at '+ response.currently.temperature + "°F." + ' ' + response.daily.summary); 
-          console.log('ApiCtrl', $scope.weather)
-        });
-      });
-      console.log('Your current position is ' + coords.latitude + ' X ' + coords.longitude);
-    }
-
-    function error(err) {  
-      console.warn('ERROR(' + err.code + '): ' + err.message);
-    }
 }]);
+
 
 
