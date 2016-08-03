@@ -32,8 +32,8 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
                 });
 
   $scope.sports={}
-  var url="https://fantasydata.com/rss/rotoworld/?format=jsonp&callback=JSON_CALLBACK";
-  $http.jsonp(url).success(function(data){
+  var sport="https://fantasydata.com/rss/rotoworld/?format=jsonp&callback=JSON_CALLBACK";
+  $http.jsonp(sport).success(function(data){
     console.log('sport data is', data);
   })
 
