@@ -31,17 +31,31 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
                     // console.log('news scope is', $scope.news)
                 });
 
-  $scope.sports={}
-  var sport="https://fantasydata.com/rss/rotoworld/?format=jsonp&callback=JSONP_CALLBACK";
-  $http.jsonp(sport).success(function(data){
-    console.log('sport data is', data);
-    { $scope.data = data;};
-    console.log('scope fantasy object is', $scope.data)
-  })
-  .error(function(err){
-    console.log('err is', err);
-  })
-
+  // $scope.sports={}
+  // var sport="https://fantasydata.com/rss/rotoworld/?format=jsonp&callback=JSONP_CALLBACK";
+  // $http.jsonp(sport).success(function(data){
+  //   console.log('sport data is', data);
+  //   { $scope.data = data;};
+  //   console.log('scope fantasy object is', $scope.data)
+  // })
+  // .error(function(err){
+  //   console.log('err is', err);
+  // })
+$.ajax({
+        url: "https://api.fantasydata.net/nba/v2/JSON/News",
+              beforeSend: function(xhrObj){
+              // Request headers
+              xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","{45a3f3bf69404c5ea7edbd03c2f7e128}");
+        },
+        type: "GET",
+        data: "",
+        })
+        .done(function(data) {
+          console.log("data is", data);
+        })
+        .fail(function(err) {
+          console.log("error is", err);
+        });
 
 //WEATHER
 navigator.geolocation.getCurrentPosition(success, error);
