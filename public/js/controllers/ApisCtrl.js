@@ -35,6 +35,8 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
   var sport="https://fantasydata.com/rss/rotoworld/?format=jsonp&callback=JSONP_CALLBACK";
   $http.jsonp(sport).success(function(data){
     console.log('sport data is', data);
+    { $scope.data = data;};
+    console.log('scope fantasy object is', $scope.data)
   })
   .error(function(err){
     console.log('err is', err);
