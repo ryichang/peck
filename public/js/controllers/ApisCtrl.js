@@ -31,6 +31,12 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
                     // console.log('news scope is', $scope.news)
                 });
 
+  $scope.sports={}
+  var url="https://fantasydata.com/rss/rotoworld/?format=json&callback=JSON_CALLBACK";
+  $http.jsonp(url).sucess(function(data){
+    console.log('sport data is', data);
+  })
+
  
 
 //WEATHER
