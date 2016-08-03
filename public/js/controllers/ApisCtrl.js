@@ -45,10 +45,10 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
   // $http.defaults.headers.common["Ocp-Apim-Subscription-Key"] = '45a3f3bf69404c5ea7edbd03c2f7e128;
 
 $.ajax({
-        url: "https://fantasydata.com/rss/rotoworld/?format=json",
+        url: "https://api.fantasydata.net/nba/v2/JSON/News",
               beforeSend: function(xhrObj){
               // Request headers
-              // xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","45a3f3bf69404c5ea7edbd03c2f7e128");
+              xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","45a3f3bf69404c5ea7edbd03c2f7e128");
         },
         type: "GET",
         data: "",
