@@ -28,7 +28,7 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
                     // console.log('response', data)
                     $scope.news = data.results;
                     toastr.warning('Loading latest published articles from New York Times');  
-                    // console.log('news scope is', $scope.news)
+                    console.log('news scope is', $scope.news)
                 });
 
   // $scope.sports={}
