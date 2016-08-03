@@ -54,7 +54,8 @@ $.ajax({
         })
         .done(function(data) {
           console.log("data is", data);
-          {$scope.sports = data}
+          $scope.sports = data
+          console.log("sports scope is", $scope.sports)
         })
         .fail(function(err) {
           console.log("error is", err);
