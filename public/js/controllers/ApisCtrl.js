@@ -54,6 +54,7 @@ $.ajax({
         })
         .done(function(data) {
           console.log("data is", data);
+          {$scope.sports = data}
         })
         .fail(function(err) {
           console.log("error is", err);
