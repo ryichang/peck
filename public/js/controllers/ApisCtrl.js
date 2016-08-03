@@ -25,7 +25,7 @@ angular.module('peckbox')
 
 var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb58d5412a54799e82ad086c0387669:5:74719242&responce-format=.jsonp&callback=JSON_CALLBACK'; 
                 $http.jsonp(api).success(function(data){
-                    // console.log('response', data)
+                    console.log('news data is', data)
                     $scope.news = data.results;
                     toastr.warning('Loading latest published articles from New York Times');  
                     console.log('news scope is', $scope.news)
@@ -41,7 +41,7 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
   // .error(function(err){
   //   console.log('err is', err);
   // })
-$scope.sports={}
+
   // $http.defaults.headers.common["Ocp-Apim-Subscription-Key"] = '45a3f3bf69404c5ea7edbd03c2f7e128;
 
 $.ajax({
