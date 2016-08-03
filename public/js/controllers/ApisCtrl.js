@@ -48,7 +48,7 @@ $.ajax({
         url: "https://fantasydata.com/rss/rotoworld/?format=json",
               beforeSend: function(xhrObj){
               // Request headers
-              xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","45a3f3bf69404c5ea7edbd03c2f7e128");
+              // xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","45a3f3bf69404c5ea7edbd03c2f7e128");
         },
         type: "GET",
         data: "",
