@@ -54,7 +54,10 @@
               </ul>
           </div>  
           <div ng-show="currentUser">
-              <ul ticker timing="5000">
+            <div ng-repeat="sport in sports">
+            <p>{{sport.title}}</p>
+            </div>
+              <!-- <ul ticker timing="5000">
                 <li ng-repeat="sport in sports | limitTo:20">
                   <div>
                       <a href="{{sport.url}}" target="#">
@@ -62,7 +65,7 @@
                       </a>
                   </div>
                 </li>
-              </ul>
+              </ul> -->
           </div>       
       </div>
 
