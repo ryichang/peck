@@ -36,6 +36,9 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
   $http.jsonp(sport).success(function(data){
     console.log('sport data is', data);
   })
+  .error(function(err){
+    console.log('err is', err);
+  })
 
  
 
