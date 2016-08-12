@@ -3,10 +3,12 @@ var auth = require('./auth')
 		,request = require('request')
 
 module.exports = function(app) {
+
 	app.post('/api/sportsnews', function(req,res){
 		console.log('API CALL')
 		var url ="https://fantasydata.com/rss/rotoworld/?format=jsonp&callback=JSONP_CALLBACK";
-		res.status(200).send("api works");
+		// res.status(200).send("api works");
+		
 		request(url, function(error, response){
 			if (error) {
 				console.log("error is", error);
@@ -14,7 +16,9 @@ module.exports = function(app) {
 				console.log('data is', response);
 				res.send(response);
 		});
+
 	});
+
 } ;
 
 
