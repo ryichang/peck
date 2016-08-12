@@ -28,13 +28,13 @@ var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb
                     // console.log('news data is', data)
                     $scope.news = data.results;
                     // toastr.warning('Loading latest published articles from New York Times');  
-                    console.log('news scope is', $scope.news)
+                    // console.log('news scope is', $scope.news)
                 });
 
   $http.post('/api/sportsnews').success(function(data){
     console.log('news return is', data);
     $scope.sportsnews = data;
-    console.log("scope news is", $scope.news)
+    console.log("scope news is", $scope.sportsnews)
   });
 
   // $scope.sports={}
