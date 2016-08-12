@@ -1,6 +1,6 @@
-var auth = require('./auth'),
-		config = require('../config.js'),
-		request = require('request');
+var auth = require('./auth')
+		,config = require('../config.js')
+		,request = require('request')
 
 module.exports = function(app) {
 	app.post('/api/sportsnews', function(req,res){
