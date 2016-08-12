@@ -3,9 +3,9 @@ var auth = require('./auth'),
 		request = require('request')
 
 module.exports = function(app) {
-	app.post('/api/news', function(req,res){
+	app.post('/api/sportsnews', function(req,res){
 		console.log('API CALL')
-		var url ="http://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=ccb58d5412a54799e82ad086c0387669:5:74719242";
+		var url ="https://fantasydata.com/rss/rotoworld/?format=jsonp&callback=JSONP_CALLBACK";
 		request(url, function(err, response){
 			if (error) {
 				console.log("error is", err);
@@ -16,10 +16,4 @@ module.exports = function(app) {
 	});
 } ;
 
-// var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb58d5412a54799e82ad086c0387669:5:74719242&responce-format=.jsonp&callback=JSON_CALLBACK'; 
-//                 $http.jsonp(api).success(function(data){
-//                     // console.log('news data is', data)
-//                     $scope.news = data.results;
-//                     toastr.warning('Loading latest published articles from New York Times');  
-//                     console.log('news scope is', $scope.news)
-//                 });
+
