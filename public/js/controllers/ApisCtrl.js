@@ -34,6 +34,7 @@ angular.module('peckbox')
   $http.post('/api/news').success(function(data){
     console.log('news return is', data);
     $scope.news = data;
+    console.log("scope news is", $scope.news)
   });
 
   // $scope.sports={}

@@ -11,7 +11,7 @@ module.exports = function(app) {
 				console.log("error is", err);
 			} 
 				console.log('data is', response);
-				// res.send(response);
+				res.send(response);
 		});
 	});
 } ;
