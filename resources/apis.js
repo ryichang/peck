@@ -5,7 +5,7 @@ var auth = require('./auth'),
 module.exports = function(app) {
 	app.post('/api/news', function(req,res){
 		console.log('API CALL')
-		var url ="https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb58d5412a54799e82ad086c0387669:5:74719242&responce-format=.jsonp";
+		var url ="https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb58d5412a54799e82ad086c0387669:5:74719242&responce-format=.jsonp&callback=JSON_CALLBACK";
 		request(url, function(err, response){
 			if (error) {
 				console.log("error is", err);
