@@ -8,13 +8,13 @@ module.exports = function(app) {
 		console.log('API CALL')
 		var url ="https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb58d5412a54799e82ad086c0387669:5:74719242&responce-format=.jsonp&callback=JSON_CALLBACK";
 		// res.status(200).send("api works");
-		
+
 		request(url, function(error, response){
 			if (error) {
 				console.log("error is", error);
 			} 
 				console.log('data is', response);
-				res.send(response);
+				res.send(response.body);
 		});
 
 	});
