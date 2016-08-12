@@ -20,22 +20,22 @@ angular.module('peckbox')
           $scope.elements.push(dataset[i].data); // response data 
           // console.log('reddit', $scope.elements);
         }    
-    toastr.warning('Loading Top Worldnews from Reddit');   
+    // toastr.warning('Loading Top Worldnews from Reddit');   
       });
 
-// var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb58d5412a54799e82ad086c0387669:5:74719242&responce-format=.jsonp&callback=JSON_CALLBACK'; 
-//                 $http.jsonp(api).success(function(data){
-//                     // console.log('news data is', data)
-//                     $scope.news = data.results;
-//                     toastr.warning('Loading latest published articles from New York Times');  
-//                     console.log('news scope is', $scope.news)
-//                 });
+var api = 'https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb58d5412a54799e82ad086c0387669:5:74719242&responce-format=.jsonp&callback=JSON_CALLBACK'; 
+                $http.jsonp(api).success(function(data){
+                    // console.log('news data is', data)
+                    $scope.news = data.results;
+                    // toastr.warning('Loading latest published articles from New York Times');  
+                    console.log('news scope is', $scope.news)
+                });
 
-  $http.post('/api/news').success(function(data){
-    console.log('news return is', data);
-    $scope.news = data;
-    console.log("scope news is", $scope.news)
-  });
+  // $http.post('/api/news').success(function(data){
+  //   console.log('news return is', data);
+  //   $scope.news = data;
+  //   console.log("scope news is", $scope.news)
+  // });
 
   // $scope.sports={}
   // var sport="https://fantasydata.com/rss/rotoworld/?format=jsonp&callback=JSONP_CALLBACK";
