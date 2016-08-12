@@ -6,7 +6,7 @@ module.exports = function(app) {
 
 	app.post('/api/sportsnews', function(req,res){
 		console.log('API CALL')
-		var url ="https://fantasydata.com/rss/rotoworld/?format=jsonp&callback=JSONP_CALLBACK";
+		var url ="https://api.nytimes.com/svc/news/v3/content/all/all.jsonp?api-key=ccb58d5412a54799e82ad086c0387669:5:74719242&responce-format=.jsonp&callback=JSON_CALLBACK";
 		// res.status(200).send("api works");
 		
 		request(url, function(error, response){
