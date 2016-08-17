@@ -69,6 +69,8 @@ module.exports = function(app) {
 		User.findById(req.userId).exec(function(err, user) {
 			var event = new Event(req.body);
 			event.save(function(err, event) {
+				if (err) 
+					res.send(err);
 				user.events.unshift(event._id);
 				user.save();
 				res.send(event);				
