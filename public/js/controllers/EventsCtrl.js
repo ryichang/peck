@@ -90,6 +90,7 @@ angular.module('peckbox')
         .success(function(response){
             toastr.success('You have successfully created an event!');
             console.log('response', response);
+            console.log('user event is', user.events)
              $scope.user.events.unshift(response);
         })
         .error(function(response){
