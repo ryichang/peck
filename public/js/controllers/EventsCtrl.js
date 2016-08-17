@@ -20,7 +20,7 @@ angular.module('peckbox')
         } else {
           data.events[index].urgent = "default";
         } 
-        //  $scope.user = data;
+         $scope.user = data;
       }
       // console.log('momentDate is', momentDate)
       // console.log('dateNow is', dateNow)
