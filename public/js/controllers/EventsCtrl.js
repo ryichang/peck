@@ -89,7 +89,7 @@ angular.module('peckbox')
         $http.post('/api/events', body)
         .success(function(response){
             toastr.success('You have successfully created an event!');
-            // console.log('response', response);
+            console.log('response', response);
              $scope.user.events.unshift(response);
         })
         .error(function(response){
