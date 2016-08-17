@@ -5,7 +5,7 @@
 angular.module('peckbox')
   .controller('EventsCtrl', ['$scope', '$http', '$auth', 'Auth', 'toastr', '$location', function($scope, $http, $auth, Auth, toastr, $location) {
     $http.get('/api/me').success(function(data) {
-      // $scope.user = data;
+      $scope.user = data;
       // console.log('data is', data);
       for (var index in data.events){
         var today = new Date();
@@ -14,13 +14,13 @@ angular.module('peckbox')
         var momentDate = moment(data.events[index].date).utc().format('YYYY-MM-DD');
         var toastrDate = moment(data.events[index].date).utc().format('hh:mma');
 
-        if( moment(data.events[index].date).utc().format('YYYY-MM-DD') == moment().format('YYYY-MM-DD')){
-          data.events[index].urgent = "urgent";
-          toastr.warning('There is an event today @ ' + toastrDate);
-        } else {
-          data.events[index].urgent = "default";
-        } 
-         $scope.user = data;
+        // if( moment(data.events[index].date).utc().format('YYYY-MM-DD') == moment().format('YYYY-MM-DD')){
+        //   data.events[index].urgent = "urgent";
+        //   toastr.warning('There is an event today @ ' + toastrDate);
+        // } else {
+        //   data.events[index].urgent = "default";
+        // } 
+        //  $scope.user = data;
       }
       // console.log('momentDate is', momentDate)
       // console.log('dateNow is', dateNow)

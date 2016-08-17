@@ -43,7 +43,6 @@ angular.module('peckbox')
         .success(function(response){
             toastr.success('You have successfully created a note!');
             // console.log('response', response);
-            console.log('user event is', user.notes)
             $scope.user.notes.unshift(response);
         })
         .error(function(response){
