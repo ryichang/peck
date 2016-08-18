@@ -216,12 +216,12 @@ html, body {
   }
 
 .smokebg {
-    position: absolute;
+    position: fixed;
     top: -10%;
     left: -10%;
     transform: translate3d(0, 0, 0) rotate(0.01deg);
     width: 120%;
-    height: 100%;
+    height: 120%;
     background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/smoke-min.png') center center no-repeat;
     background-size: cover;
     z-index: -10;
