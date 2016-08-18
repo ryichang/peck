@@ -224,7 +224,7 @@ html, body {
     height: 100%;
     background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/smoke-min.png') center center no-repeat;
     background-size: cover;
-    z-index: 0;
+    z-index: -10;
     opacity: .5;
     animation: smokebg 60s infinite alternate;
   }
