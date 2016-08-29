@@ -1,16 +1,16 @@
 <div class="container">
     <div class="col-sm-3">
       <h1 class="fadeIn">TOTAL EVENTS</h1>
-      <h1 class="fadeIn">{{user.events.length}}</h1> 
+      <h1 class="fadeIn">{{user.events.length}}</h1>
     </div>
-    
+
 
     <div class="col-sm-9">
       <div class="card fadeIn">
         <div id="tabs">
               <ul class="tabs">
-                  <li ng-repeat="tab in tabs" 
-                      ng-class="{active:isActiveTab(tab.url)}" 
+                  <li ng-repeat="tab in tabs"
+                      ng-class="{active:isActiveTab(tab.url)}"
                       ng-click="onClickTab(tab)">{{tab.title}}</li>
               </ul>
               <div id="mainView">
@@ -21,7 +21,7 @@
           <script type="text/ng-template" id="event.tpl.html">
             <div id="viewOne">
               <div id="event-form">
-                
+
               <form ng-submit="createEvent(user)">
                 <div class="form-group">
                   <label for="title">Title</label>
@@ -35,7 +35,7 @@
 
                 <div class="form-group">
                   <label for="title">Date</label>
-              
+
                   <datepicker button-prev="<i class='fa fa-arrow-left'></i>" button-next="<i class='fa fa-arrow-right'></i>" date-format="MMM d, y h:mm a">
                   <input ng-model="event.date" type="text" class="form-control"/>
                   </datepicker>
@@ -46,14 +46,14 @@
                   <label for="title">Location</label>
                   <input type="text" g-places-autocomplete options="autocompleteOptions" ng-model="event.location" class='form-control'>
                 </div>
-                
+
                 <button class="btn btn-social"><i class="ion-plus" type="submit"></i></button>
-               
+
               </form>
               </div>
             </div>
           </script>
-        
+
           <script type="text/ng-template" id="map.tpl.html">
             <div id="viewTwo">
             <div class="eventMap">
@@ -66,10 +66,10 @@
             </div>
             </div>
            </script>
-        
+
 
         </div>
-     
+
     <!--  <ng-map center="current-location" zoom="9" class="map hidden-xs" styles="[{stylers:[{hue:'#e0efef'},{visibility:'on'}]},{elementType:'labels',stylers:[{visibility:'on'}]},{featureType:'water',stylers:[{color:'#000000'},{lightness:'30'}]}]">
         <transit-layer></transit-layer>
         <traffic-layer></traffic-layer>
@@ -80,7 +80,7 @@
      <!-- FORM TO CREATE EVENTS -->
 <!--      <div class="col-sm-12 card fade">
      <div id="event-form">
-       
+
      <form ng-submit="createEvent(user)">
        <div class="form-group">
          <label for="title">Title</label>
@@ -99,25 +99,25 @@
 
        <div class="form-group">
          <label for="title">Date</label>
-     
+
          <datepicker button-prev="<i class='fa fa-arrow-left'></i>" button-next="<i class='fa fa-arrow-right'></i>">
          <input ng-model="event.date" type="text" class="form-control"/>
          </datepicker> -->
          <!-- <input type="text" datetimepicker class="form-control" ng-model="event.date"></textarea> -->
        <!-- </div>
-       
+
        <button class="btn btn-default" type="submit">Save</button>
-      
+
      </form>
      </div>
      </div> -->
      <!--  <div class="page-header">
-        <h4>Events</h4><p>User ID: {{user._id}}</p> <p>Total Events: {{user.events.length}}</p> 
+        <h4>Events</h4><p>User ID: {{user._id}}</p> <p>Total Events: {{user.events.length}}</p>
       </div> -->
-      
-        
 
-     <!-- 
+
+
+     <!--
       <div ng-repeat="post in posts | orderBy:'-created_at'"> -->
 
       <div ng-repeat="event in user.events | orderBy:'-created_at'">
@@ -126,7 +126,7 @@
             <svg width="10" height="10" class="close-btn" ng-click="deleteEvent(event)">
                 <line y2="100%" x2="0" y1="0" x1="100%" stroke-width="1" stroke="#fff"></line>
                 <line y2="100%" x2="100%" y1="0%" x1="0%" stroke-width="1" stroke="#fff"></line>
-            </svg>    
+            </svg>
            <!--  <i class="fa fa-close pull-right" ng-click="deleteEvent(event)"></i> -->
             <div class="card-date" id={{event.urgent}}>{{event.date | date: 'EEE MMM d @ hh:mma' : 'UTC'}}</div>
            <!--  <div class="card-date">{{event.date}}</div> -->
@@ -155,7 +155,7 @@
              <rect x="2" y="2" height="10" width="10" fill="rgba(250,215,123,1)" stroke="#000" stroke-width="2"></rect>
              </svg>
              <svg height="14" width="14" value="red" ng-model="event.color" ng-click="test(event, 'red')">
-             <rect x="2" y="2" height="10" width="10" fill="rgba(247,73,86,1)" stroke="#000" stroke-width="2"></rect>
+             <rect x="2" y="2" height="10" width="10" fill="rgba(255,103,102,1)" stroke="#000" stroke-width="2"></rect>
              </svg>
 
              <svg height="14" width="14" ng-click="event.editForm = true">
@@ -166,7 +166,7 @@
              </div>
 
          </div>
-       
+
 
           <form ng-show="event.editForm" ng-submit="updateEvent(event)">
             <div class="form-group">

@@ -1,5 +1,5 @@
 <div class="container">
-  
+
   <div class="col-sm-3">
     <h1 class="fadeIn">TOTAL NOTES</h1>
     <h1 class="fadeIn">{{user.notes.length}}</h1>
@@ -18,7 +18,7 @@
       </form>
     </div>
     </div>
-    
+
     <div ng-repeat="note in user.notes">
       <div class="col-sm-3 card " id="{{note.color}}">
         <div ng-hide="note.editForm">
@@ -26,7 +26,7 @@
             <svg width="10" height="10" class="close-btn" ng-click="deleteNote(note)">
                 <line y2="100%" x2="0" y1="0" x1="100%" stroke-width="1" stroke="#fff"></line>
                 <line y2="100%" x2="100%" y1="0%" x1="0%" stroke-width="1" stroke="#fff"></line>
-            </svg>  
+            </svg>
             <div class="card-date">{{note.updated_at | date: 'MMM d @ h:mma'}}</div>
             <div id="ribbon">
                 <div ng-show="note.comments.length>0" ng-click="noteShow(note)">{{note.comments.length}}</div>
@@ -36,7 +36,7 @@
             <p ng-bind-html="note.body | linky:'_blank'"></p>
           <!--   <p>{{note.body}}</p> -->
            <!--  <a ng-show="note.body.length > limit" href ng-click="limit = note.body.length; moreShown = true">More</a> -->
-              
+
 
              <div style="float:right">
              <svg height="14" width="14" value="default" ng-model="note.color" ng-click="test(note, 'default')">
@@ -49,7 +49,7 @@
              <rect x="2" y="2" height="10" width="10" fill="rgba(250,215,123,1)" stroke="#000" stroke-width="2"></rect>
              </svg>
              <svg height="14" width="14" value="red" ng-model="note.color" ng-click="test(note, 'red')">
-             <rect x="2" y="2" height="10" width="10" fill="rgba(247,73,86,1)" stroke="#000" stroke-width="2"></rect>
+             <rect x="2" y="2" height="10" width="10" fill="rgba(255,103,102,1)" stroke="#000" stroke-width="2"></rect>
              </svg>
 
              <svg height="14" width="14" ng-click="note.editForm = true">
@@ -58,7 +58,7 @@
              </svg>
              </div>
            <!--  <a ng-hide="note.body.length > limit" href ng-click="limit = 140; moreShown = false"> Less </a> -->
-         
+
         </div>
 
 
@@ -66,7 +66,7 @@
             <div class="form-group">
               <input type="text" ng-model="note.body" class="form-control">
             </div>
-            
+
             <!-- <button class="btn btn-social"><svg width="8" height="8" type="submit">
                 <line y2="100%" x2="0" y1="0" x1="100%" stroke-width="0.8" stroke="#fff"></line>
             </svg>  </button>
@@ -74,7 +74,7 @@
             <input type="submit" value="Update" class="btn btn-social">
           </form>
 
-        
+
       </div>
     </div>
 

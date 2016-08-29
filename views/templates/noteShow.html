@@ -20,7 +20,7 @@
           <rect x="2" y="2" height="10" width="10" fill="rgba(250,215,123,1)" stroke="#000" stroke-width="2"></rect>
           </svg>
           <svg height="14" width="14" value="red" ng-model="note.color" ng-click="test(note, 'red')">
-          <rect x="2" y="2" height="10" width="10" fill="rgba(247,73,86,1)" stroke="#000" stroke-width="2"></rect>
+          <rect x="2" y="2" height="10" width="10" fill="rgba(255,103,102,1)" stroke="#000" stroke-width="2"></rect>
           </svg>
           <svg height="14" width="14" ng-click="note.editForm = true">
           <rect x="2" y="2" height="10" width="10" fill="rgba(0,0,0,1)" stroke="#000" stroke-width="2"></rect>
@@ -28,7 +28,7 @@
           </svg>
           </div>
       </div>
- 
+
     <form ng-show="note.editForm" ng-submit="updateNote(note)">
       <div class="form-group">
         <input type="text" ng-model="note.body" class="form-control">
@@ -36,11 +36,11 @@
       <input type="submit" value="Update" class="btn btn-social">
     </form>
   </div>
-        
+
   </div>
-  
-  
-   
+
+
+
 
   <div class="col-sm-9">
     <div class="card fadeIn">
@@ -61,7 +61,7 @@
           <svg width="8" height="8" class="close-btn" ng-click="deleteComment(comment)">
               <line y2="100%" x2="0" y1="0" x1="100%" stroke-width="0.8" stroke="#fff"></line>
               <line y2="100%" x2="100%" y1="0%" x1="0%" stroke-width="0.8" stroke="#fff"></line>
-          </svg>  
+          </svg>
           <div class="card-date">{{comment.updated_at | date: 'MMM d @ h:mma'}}</div>
           <p ng-bind-html="comment.body | linky:'_blank'"></p>
          <!--  <p>{{comment.body}}</p> -->
@@ -87,7 +87,7 @@
             </div>
 
           </div>
-     
+
           <form ng-show="comment.editForm" ng-submit="updateComment(comment)">
             <div class="form-group">
               <input type="text" ng-model="comment.body" class="form-control">
@@ -95,6 +95,6 @@
             <input type="submit" value="Update" class="btn btn-social">
           </form>
         </div>
-      
- 
+
+
 </div>

@@ -38,7 +38,7 @@
           <rect x="2" y="2" height="10" width="10" fill="rgba(250,215,123,1)" stroke="#000" stroke-width="2"></rect>
           </svg>
           <svg height="14" width="14" value="red" ng-model="group.color" ng-click="test(group, 'red')">
-          <rect x="2" y="2" height="10" width="10" fill="rgba(247,73,86,1)" stroke="#000" stroke-width="2"></rect>
+          <rect x="2" y="2" height="10" width="10" fill="rgba(255,103,102,1)" stroke="#000" stroke-width="2"></rect>
           </svg>
           <svg height="14" width="14" ng-click="group.editForm = true" ng-if="group.owner._id == user._id">
           <rect x="2" y="2" height="10" width="10" fill="rgba(0,0,0,1)" stroke="#000" stroke-width="2"></rect>
@@ -46,7 +46,7 @@
           </svg>
           </div>
       </div>
- 
+
     <form ng-show="group.editForm" ng-submit="updateGroup(group)">
       <div class="form-group">
         <input type="text" ng-model="group.title" class="form-control">
@@ -64,10 +64,10 @@
         <svg width="10" height="10" class="close-btn" ng-click="deleteEvent(event)">
             <line y2="100%" x2="0" y1="0" x1="100%" stroke-width="1" stroke="#fff"></line>
             <line y2="100%" x2="100%" y1="0%" x1="0%" stroke-width="1" stroke="#fff"></line>
-        </svg>    
+        </svg>
        <!--  <i class="fa fa-close pull-right" ng-click="deleteEvent(event)"></i> -->
         <div class="card-date">{{event.date | date: 'EEE MMM d @ hh:mma' : 'UTC'}}</div>
-        
+
       <!--   <div id="ribbon">
             <div ng-show="event.comments.length>0" ng-click="eventShow(event)">{{event.comments.length}}</div>
          </div>
@@ -100,7 +100,7 @@
          </div>
 
      </div>
-   
+
 
       <form ng-show="event.editForm" ng-submit="updateEvent(event)">
         <div class="form-group">
@@ -126,18 +126,18 @@
     </div>
   </div>
 
-        
+
   </div>
-  
-  
-   
+
+
+
 
   <div class="col-sm-9" ng-show="userFound">
     <div class="card fadeIn">
     <div id="tabs">
           <ul class="tabs">
-              <li ng-repeat="tab in tabs" 
-                  ng-class="{active:isActiveTab(tab.url)}" 
+              <li ng-repeat="tab in tabs"
+                  ng-class="{active:isActiveTab(tab.url)}"
                   ng-click="onClickTab(tab)">{{tab.title}}</li>
           </ul>
           <div id="mainView">
@@ -162,7 +162,7 @@
       <script type="text/ng-template" id="event.tpl.html">
         <div id="viewTwo">
           <div id="event-form">
-            
+
           <form ng-submit="createEvent(group, user)">
             <div class="form-group">
               <label for="title">Title</label>
@@ -173,7 +173,7 @@
               <label for="description">Description</label>
               <textarea class="form-control" ng-model="event.description" required="true"></textarea>
             </div>
-            
+
             <div class="form-group">
               <label for="title">Date</label>
               <datepicker button-prev="<i class='fa fa-arrow-left'></i>" button-next="<i class='fa fa-arrow-right'></i>" date-format="MMM d, y h:mm a">
@@ -190,7 +190,7 @@
           </form>
         </div>
       </script>
-    
+
       <script type="text/ng-template" id="map.tpl.html">
         <div id="viewThree">
         <div class="eventMap">
@@ -204,7 +204,7 @@
         </div>
        </script>
 
-    
+
 
     </div>
 
@@ -225,13 +225,13 @@
           <svg width="8" height="8" class="close-btn" ng-click="deleteComment(comment, group)" ng-if="comment.userId._id == user._id">
               <line y2="100%" x2="0" y1="0" x1="100%" stroke-width="0.8" stroke="#fff"></line>
               <line y2="100%" x2="100%" y1="0%" x1="0%" stroke-width="0.8" stroke="#fff"></line>
-          </svg>  
+          </svg>
           <div class="card-date">{{comment.updated_at | date: 'MMM d @ h:mma'}}</div>
-       
+
             <div class="groupProfile">
               <h5><img src="{{comment.userId.picture}}" alt="" class="groupprofilePicture">{{comment.userId.displayName}}</h5>
             </div>
-         
+
      <!--      <h3>{{comment.userId.displayName}}</h3> -->
           <p ng-bind-html="comment.body | linky:'_blank'"></p>
         <!--   <p>{{comment.body}}</p> -->
@@ -258,7 +258,7 @@
             </div>
 
           </div>
-     
+
           <form ng-show="comment.editForm" ng-submit="updateComment(comment)">
             <div class="form-group">
               <input type="text" ng-model="comment.body" class="form-control">
@@ -266,6 +266,6 @@
             <input type="submit" value="Update" class="btn btn-social">
           </form>
         </div>
-      
- 
+
+
 </div>

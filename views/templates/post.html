@@ -21,16 +21,16 @@
           </form>
       </div>
       </div>
-     <!-- 
+     <!--
       <div ng-repeat="post in posts | orderBy:'-created_at'"> -->
-    
+
       <div ng-repeat="post in user.posts">
         <div class="col-sm-3 card" id="{{post.color}}">
           <div ng-hide="post.editForm">
               <svg width="10" height="10" class="close-btn" ng-click="deletePost(post)">
                   <line y2="100%" x2="0" y1="0" x1="100%" stroke-width="1" stroke="#fff"></line>
                   <line y2="100%" x2="100%" y1="0%" x1="0%" stroke-width="1" stroke="#fff"></line>
-              </svg>  
+              </svg>
           <!--   <i class="fa fa-close pull-right" ng-click="deletePost(post)"></i> -->
             <div class="card-date">{{post.updated_at | date: 'MMM d @ h:mma'}}</div>
             <div id="ribbon">
@@ -52,7 +52,7 @@
               <rect x="2" y="2" height="10" width="10" fill="rgba(250,215,123,1)" stroke="#000" stroke-width="2"></rect>
               </svg>
               <svg height="14" width="14" value="red" ng-model="post.color" ng-click="test(post, 'red')">
-              <rect x="2" y="2" height="10" width="10" fill="rgba(247,73,86,1)" stroke="#000" stroke-width="2"></rect>
+              <rect x="2" y="2" height="10" width="10" fill="rgba(255,103,102,1)" stroke="#000" stroke-width="2"></rect>
               </svg>
 
               <svg height="14" width="14" ng-click="post.editForm = true">
@@ -64,7 +64,7 @@
               <input type="button"  value="blue" ng-model="post.color" ng-click="test(post, 'blue')">
               <input type="button"  value="yellow" ng-model="post.color" ng-click="test(post, 'yellow')">
               <input type="button"  value="red" ng-model="post.color" ng-click="test(post, 'red')"> -->
-<!-- 
+<!--
               <input type="text" ng-model="post.color" ng-click="test(post)"> -->
             <!--   <input type="button" value="Red" ng-click="color={background:'rgba(237,73,86,1)'}">
               <input type="button" value="Blue" ng-click="color={background:'rgba(169,216,200,1)'}"> -->
@@ -82,14 +82,11 @@
              <!--    <textarea class="textarea form-control" ng-model="post.body" > -->
               </div>
 
-         
+
               <input type="submit" value="Update" class="btn btn-social"">
             </form>
           </div>
         </div>
       </div>
- 
+
 </div>
-
-
-  

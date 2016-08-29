@@ -35,7 +35,7 @@
           <rect x="2" y="2" height="10" width="10" fill="rgba(250,215,123,1)" stroke="#000" stroke-width="2"></rect>
           </svg>
           <svg height="14" width="14" value="red" ng-model="event.color" ng-click="eventColor(event, 'red')">
-          <rect x="2" y="2" height="10" width="10" fill="rgba(247,73,86,1)" stroke="#000" stroke-width="2"></rect>
+          <rect x="2" y="2" height="10" width="10" fill="rgba(255,103,102,1)" stroke="#000" stroke-width="2"></rect>
           </svg>
           <svg height="14" width="14" ng-click="event.editForm = true">
           <rect x="2" y="2" height="10" width="10" fill="rgba(0,0,0,1)" stroke="#000" stroke-width="2"></rect>
@@ -43,7 +43,7 @@
           </svg>
           </div>
       </div>
- 
+
     <form ng-show="event.editForm" ng-submit="updateEvent(event)">
         <div class="form-group">
           <label for="title">Title</label>
@@ -70,9 +70,9 @@
         <div class="card" id="directions-panel">
           </div>
   </div>
-  
+
   <div class="col-sm-9">
-   
+
     <ng-map center="current-location" zoom="9" class="showmap" styles="[{stylers:[{hue:'#e0efef'},{visibility:'on'}]},{elementType:'labels',stylers:[{visibility:'on'}]},{featureType:'water',stylers:[{color:'#000000'},{lightness:'30'}]}]">
        <transit-layer></transit-layer>
        <traffic-layer></traffic-layer>
@@ -99,8 +99,8 @@
     </div>
  <!--      <div id="tabs">
             <ul class="tabs">
-                <li ng-repeat="tab in tabs" 
-                    ng-class="{active:isActiveTab(tab.url)}" 
+                <li ng-repeat="tab in tabs"
+                    ng-class="{active:isActiveTab(tab.url)}"
                     ng-click="onClickTab(tab)">{{tab.title}}</li>
             </ul>
             <div id="mainView">
@@ -121,10 +121,10 @@
             </div>
           </div>
         </script> -->
-      
+
        <!--  <script type="text/ng-template" id="map.tpl.html">
           <div id="viewTwo">
-      
+
             <ng-map center="current-location" zoom="9" class="map" styles="[{stylers:[{hue:'#e0efef'},{visibility:'on'}]},{elementType:'labels',stylers:[{visibility:'on'}]},{featureType:'water',stylers:[{color:'#000000'},{lightness:'30'}]}]">
                <transit-layer></transit-layer>
                <marker position="{{event.location.formatted_address}}">
@@ -140,10 +140,10 @@
             </ng-map>
              <div class="card" id="directions-panel">
                </div>
-          
+
           </div>
          </script> -->
-      
+
 
       </div>
 
@@ -165,7 +165,7 @@
   	      <svg width="8" height="8" class="close-btn" ng-click="deleteComment(comment)">
   	          <line y2="100%" x2="0" y1="0" x1="100%" stroke-width="0.8" stroke="#fff"></line>
   	          <line y2="100%" x2="100%" y1="0%" x1="0%" stroke-width="0.8" stroke="#fff"></line>
-  	      </svg>  
+  	      </svg>
   	      <div class="card-date">{{comment.updated_at | date: 'MMM d @ h:mma'}}</div>
           <p ng-bind-html="comment.body | linky:'_blank'"></p>
   	      <!-- <p>{{comment.body}}</p> -->
@@ -191,7 +191,7 @@
   	        </div>
 
   	      </div>
-  	 
+
   	      <form ng-show="comment.editForm" ng-submit="updateComment(comment)">
   	        <div class="form-group">
   	          <input type="text" ng-model="comment.body" class="form-control">

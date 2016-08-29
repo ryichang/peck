@@ -21,15 +21,15 @@
           </form>
       </div>
       </div>
-  
-    
+
+
       <div ng-repeat="group in groups | orderBy:'-updated_at'">
         <div class="col-sm-3 card" id="{{group.color}}">
           <div ng-hide="group.editForm">
               <svg width="10" height="10" class="close-btn" ng-click="deleteGroup(group)" ng-if="group.owner == user._id">
                   <line y2="100%" x2="0" y1="0" x1="100%" stroke-width="1" stroke="#fff"></line>
                   <line y2="100%" x2="100%" y1="0%" x1="0%" stroke-width="1" stroke="#fff"></line>
-              </svg>  
+              </svg>
             <div class="card-date">{{group.created_at | date: 'MMM d @ h:mma'}}</div>
             <div id="ribbon">
                    <div ng-show="group.comments.length>0" ng-click="groupShow(group)">{{group.comments.length}}</div>
@@ -52,7 +52,7 @@
               <rect x="2" y="2" height="10" width="10" fill="rgba(250,215,123,1)" stroke="#000" stroke-width="2"></rect>
               </svg>
               <svg height="14" width="14" value="red" ng-model="group.color" ng-click="test(group, 'red')">
-              <rect x="2" y="2" height="10" width="10" fill="rgba(247,73,86,1)" stroke="#000" stroke-width="2"></rect>
+              <rect x="2" y="2" height="10" width="10" fill="rgba(255,103,102,1)" stroke="#000" stroke-width="2"></rect>
               </svg>
 
               <svg height="14" width="14" ng-click="group.editForm = true" ng-if="group.owner == user._id">
@@ -60,7 +60,7 @@
               <line y2="2" x2="12" y1="12" x1="2" stroke-width="1.2" stroke="#fff"></line>
               </svg>
               </div>
-  
+
             </div>
 
             <form ng-show="group.editForm" ng-submit="updateGroup(group)">
@@ -71,11 +71,11 @@
                 <input type="text" ng-model="group.description" class="form-control">
               </div>
 
-         
+
               <input type="submit" value="Update" class="btn btn-social">
             </form>
           </div>
         </div>
       </div>
- 
+
 </div>
