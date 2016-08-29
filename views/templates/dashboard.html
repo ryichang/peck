@@ -13,15 +13,15 @@
           <img src="{{user.picture}}" alt="" class="profilePicture">
           <div class="card-name"><h4>{{user.displayName}}</h4></div>
       </div>
-    
+
       <div ng-repeat="post in user.posts | filter:search">
-      
+
          <div class="col-sm-11 card " id="{{post.color}}">
            <div ng-hide="post.editForm">
                <svg width="10" height="10" class="close-btn" ng-click="deletePost(post)">
                    <line y2="100%" x2="0" y1="0" x1="100%" stroke-width="1" stroke="#fff"></line>
                    <line y2="100%" x2="100%" y1="0%" x1="0%" stroke-width="1" stroke="#fff"></line>
-               </svg>  
+               </svg>
                <div id="ribbon">
                    <div ng-show="post.comments.length>0" ng-click="postShow(post)">{{post.comments.length}}</div>
                </div>
@@ -30,8 +30,8 @@
                 <h3>{{post.title}}</h3>
                 <p ng-bind-html="post.body | linky: '_blank'"></p>
              <!--    <p>{{post.body}}</p> -->
-            
-                  
+
+
 
                  <div style="float:right">
                  <svg height="14" width="14" value="default" ng-model="post.color" ng-click="test(post, 'default')">
@@ -44,16 +44,16 @@
                  <rect x="2" y="2" height="10" width="10" fill="rgba(250,215,123,1)" stroke="#000" stroke-width="2"></rect>
                  </svg>
                  <svg height="14" width="14" value="red" ng-model="post.color" ng-click="test(post, 'red')">
-                 <rect x="2" y="2" height="10" width="10" fill="rgba(247,73,86,1)" stroke="#000" stroke-width="2"></rect>
+                 <rect x="2" y="2" height="10" width="10" fill="rgba(255,103,102,1)" stroke="#000" stroke-width="2"></rect>
                  </svg>
                  <svg height="14" width="14" ng-click="post.editForm = true">
                  <rect x="2" y="2" height="10" width="10" fill="rgba(0,0,0,1)" stroke="#000" stroke-width="2"></rect>
                  <line y2="2" x2="12" y1="12" x1="2" stroke-width="1.2" stroke="#fff"></line>
                  </svg>
-              
+
                  </div>
-                  
-            <!--      
+
+            <!--
                  <button class="btn btn-social" ng-click="postShow(post)">
                   <i class="fa fa-eye" aria-hidden="true"></i>
                  </button> -->
@@ -71,7 +71,7 @@
                <input type="submit" value="Update" class="btn btn-social">
              </form>
 
-           
+
          </div>
 
         <!-- <div ng-repeat="post in user.posts | filter:search">
@@ -88,7 +88,7 @@
          </div>
          <div class="card">
           <form ng-show="post.editForm" ng-submit="updatePost(post)">
-         
+
             <div class="form-group">
               <input type="text" ng-model="post.title" class="form-control">
             </div>
@@ -101,16 +101,16 @@
          </div> -->
 
       </div>
-     
-    </div>    
-                         
+
+    </div>
+
     <div class="col-sm-6" ng-controller="NotesCtrl">
-     
+
         <div class="card fadeIn">
         <div id="tabs" ng-controller="UsersCtrl">
                 <ul class="tabs">
-                    <li ng-repeat="tab in tabs" 
-                        ng-class="{active:isActiveTab(tab.url)}" 
+                    <li ng-repeat="tab in tabs"
+                        ng-class="{active:isActiveTab(tab.url)}"
                         ng-click="onClickTab(tab)">{{tab.title}}</li>
                 </ul>
                 <div id="mainView">
@@ -130,7 +130,7 @@
                 </form>
               </div>
             </script>
-          
+
             <script type="text/ng-template" id="two.tpl.html">
               <div id="viewTwo">
                 <div id="post-form">
@@ -144,17 +144,17 @@
                         <label for="description">Description</label>
                         <textarea class="form-control" ng-model="post.body" required="true"></textarea>
                       </div>
-  
+
                       <button class="btn btn-social"><i class="ion-plus" type="submit"></i></button>
                     </form>
                 </div>
               </div>
              </script>
-          
+
             <script type="text/ng-template" id="three.tpl.html">
               <div id="viewThree">
                 <div id="event-form">
-                  
+
                 <form ng-submit="createEvent(user)">
                   <div class="form-group">
                     <label for="title">Title</label>
@@ -165,7 +165,7 @@
                     <label for="description">Description</label>
                     <textarea class="form-control" ng-model="event.description" required="true"></textarea>
                   </div>
-                  
+
                   <div class="form-group">
                     <label for="title">Date</label>
                     <datepicker button-prev="<i class='fa fa-arrow-left'></i>" button-next="<i class='fa fa-arrow-right'></i>" date-format="MMM d, y h:mm a">
@@ -194,20 +194,20 @@
              <button type="submit" class="btn btn-default">Save</button>
            </form>
          </div> -->
-     </div>                     
-    
+     </div>
+
 
 
      <div ng-repeat="note in user.notes | filter:search">
        <!-- <div class="col-sm-12 card fade">
-     
+
            <div class="card-date">{{note.created_at | date: 'MMMM d @ h:mma'}}</div>
            <div ng-init="limit = 140; moreShown = false">
            <p>{{note.body | limitTo: limit}}
            <a ng-show="note.body.length > limit"
             href ng-click="limit=note.body.length; moreShown = true">  More
            </a> -->
-           <!-- <a ng-show="moreShown = true" href ng-click="limit = 140; moreShown = false"> Less 
+           <!-- <a ng-show="moreShown = true" href ng-click="limit = 140; moreShown = false"> Less
            </a> -->
            <!-- <a class="btn pull-right" ng-show="note.body.length > limit" ng-class="{true: 'btn-primary', false: 'btn-danger'}[!show.more]" ng-click="show.more = !show.more" ; ng-click="limit=note.body.length">{{!show.more && 'More' || 'Less'}} </a> -->
 
@@ -219,7 +219,7 @@
               <svg width="10" height="10" class="close-btn" ng-click="deleteNote(note)">
                   <line y2="100%" x2="0" y1="0" x1="100%" stroke-width="1" stroke="#fff"></line>
                   <line y2="100%" x2="100%" y1="0%" x1="0%" stroke-width="1" stroke="#fff"></line>
-              </svg>  
+              </svg>
                 <!--  <i class="fa fa-close pull-right" ng-click="deleteNote(note)"></i> -->
               <div class="card-date">{{note.updated_at | date: 'MMM d @ h:mma'}}</div>
               <div id="ribbon">
@@ -256,7 +256,7 @@
                <line y2="2" x2="12" y1="12" x1="2" stroke-width="1.2" stroke="#fff"></line>
                </svg>
                </div>
-             
+
           </div>
 
 
@@ -266,13 +266,13 @@
               </div>
               <input type="submit" value="Update" class="btn btn-social">
             </form>
-              
-          
+
+
         </div>
-     </div>                          
+     </div>
     </div>
   </div>
-       
+
     <div class="col-sm-3">
       <ng-map center="current-location" zoom="9" class="dashboardmap hidden-xs" styles="[{stylers:[{hue:'#e0efef'},{visibility:'on'}]},{elementType:'labels',stylers:[{visibility:'on'}]},{featureType:'water',stylers:[{color:'#000000'},{lightness:'30'}]}]">
          <transit-layer></transit-layer>
@@ -286,7 +286,7 @@
             <svg width="10" height="10" class="close-btn" ng-click="deleteEvent(event)">
                 <line y2="100%" x2="0" y1="0" x1="100%" stroke-width="1" stroke="#fff"></line>
                 <line y2="100%" x2="100%" y1="0%" x1="0%" stroke-width="1" stroke="#fff"></line>
-            </svg>   
+            </svg>
             <div class="card-date" id={{event.urgent}}>{{event.date | date: 'EEE MMM d @ hh:mma' : 'UTC'}}</div>
             <div id="ribbon">
                 <div ng-show="event.comments.length>0" ng-click="eventShow(event)">{{event.comments.length}}</div>
@@ -297,7 +297,7 @@
             <p ng-bind-html="event.description | linky:'_blank'"></p>
             <!-- <p>{{event.description}}</p> -->
             <p>{{event.location.formatted_address}}</p>
-            
+
              <div style="float:right">
              <svg height="14" width="14" value="default" ng-model="event.color" ng-click="test(event, 'default')">
              <rect x="2" y="2" height="10" width="10" fill="rgba(242,239,235, 1)" stroke="#000" stroke-width="2"></rect>
@@ -317,7 +317,7 @@
              <line y2="2" x2="12" y1="12" x1="2" stroke-width="1.2" stroke="#fff"></line>
              </svg>
 
-           
+
 
              </div>
             <!-- <a href="#" class="pull-right">
@@ -350,11 +350,9 @@
         </div>
       </div>
     </div>
-          
 
-                     
+
+
  </div>
 
 </div>
-
-
