@@ -23,35 +23,35 @@ angular.module('peckbox.services', [])
   }])
 
   .factory('Post', function ($window, $resource) {
-     return $resource($window.location.origin + '/api/posts/:id', { id: '@id' }, {
-       update: { method: 'PUT'} 
+     return $resource($window.location.origin + '/api/tasks/:id', { id: '@id' }, {
+       update: { method: 'PUT'}
      });
    })
 
   .factory('Note', function ($window, $resource) {
      return $resource($window.location.origin + '/api/notes/:id', { id: '@id' }, {
-       update: { method: 'PUT'} 
+       update: { method: 'PUT'}
      });
    })
 
   .factory('Event', function ($window, $resource) {
      return $resource($window.location.origin + '/api/events/:id', { id: '@id' }, {
-       update: { method: 'PUT'} 
+       update: { method: 'PUT'}
      });
    })
 
   .factory('Comment', function ($window, $resource) {
      return $resource($window.location.origin + '/api/comments/:id', { id: '@id' }, {
-       update: { method: 'PUT'} 
+       update: { method: 'PUT'}
      });
    })
 
   .factory('Group', function ($window, $resource) {
      return $resource($window.location.origin + '/api/groups/:id', { id: '@id' }, {
-       update: { method: 'PUT'} 
+       update: { method: 'PUT'}
      });
    });
-  
+
 //    .factory('Post', function($resource, $window) {
 //   return $resource('/api/posts/:id', { id: '@_id'}, {
 //     update: {
@@ -62,6 +62,3 @@ angular.module('peckbox.services', [])
 //     }
 //   });
 // });
-
-
-  

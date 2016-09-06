@@ -59,7 +59,7 @@ angular.module('peckbox', ['peckbox.services',
         controller: 'UsersCtrl'
       });
 
-      $routeProvider.when('/tasks', {
+      $routeProvider.when('/posts', {
         templateUrl: 'templates/post',
         controller: 'PostsCtrl'
       });
@@ -84,12 +84,12 @@ angular.module('peckbox', ['peckbox.services',
         controller: 'GroupShowCtrl'
       });
 
-      $routeProvider.when('/tasks/:id/comments', {
+      $routeProvider.when('/posts/:id/comments', {
         templateUrl: 'templates/postShow',
         controller: 'PostsCtrl'
       });
 
-      $routeProvider.when('/tasks/:id/comments', {
+      $routeProvider.when('/posts/:id/comments', {
         templateUrl: 'templates/postShow',
         controller: 'PostShowCtrl'
       });

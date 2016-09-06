@@ -11,7 +11,7 @@ angular.module('peckbox')
       //   toastr.warning('You have one task to complete!');
       // } else (tasks > "1"){
       //   toastr.warning('You have ' + tasks + ' tasks to complete!');
-      // } 
+      // }
     });
 
 
@@ -30,17 +30,17 @@ angular.module('peckbox')
         } else {
           post.color = "default";
         }
-        
+
         $http.put('/api/posts/'+ post._id, post)
         .success(function(response){
          // console.log(response);
        });
     };
 
-  
+
 
     $scope.createPost = function(user) {
-     
+
         var config = {
             userId: user._id,
             title : $scope.post.title,
@@ -84,7 +84,7 @@ angular.module('peckbox')
        // console.log('edit', post);
      };
 
-  
+
 
     $scope.deletePost = function(post) {
       $http.delete('/api/posts/' + post._id)
@@ -101,7 +101,7 @@ angular.module('peckbox')
 
     $scope.postShow = function(post) {
       $location.path('/posts/' + post._id + '/comments');
-  
+
     };
 
 
@@ -137,7 +137,7 @@ angular.module('peckbox')
         } else {
           post.color = "default";
         }
-        
+
         $http.put('/api/posts/'+ post._id, post)
         .success(function(response){
          // console.log(response);
@@ -221,7 +221,7 @@ angular.module('peckbox')
          } else {
            comment.color = "default";
          }
-         
+
          $http.put('/api/posts/'+ comment.post + '/comments/' + comment._id, comment)
          .success(function(response){
           // console.log(response);
@@ -229,5 +229,3 @@ angular.module('peckbox')
      };
 
   }]);
-
-
