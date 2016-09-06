@@ -59,7 +59,7 @@ angular.module('peckbox', ['peckbox.services',
         controller: 'UsersCtrl'
       });
 
-      $routeProvider.when('/posts', {
+      $routeProvider.when('/tasks', {
         templateUrl: 'templates/post',
         controller: 'PostsCtrl'
       });
@@ -84,12 +84,12 @@ angular.module('peckbox', ['peckbox.services',
         controller: 'GroupShowCtrl'
       });
 
-      $routeProvider.when('/posts/:id/comments', {
+      $routeProvider.when('/tasks/:id/comments', {
         templateUrl: 'templates/postShow',
         controller: 'PostsCtrl'
       });
 
-      $routeProvider.when('/posts/:id/comments', {
+      $routeProvider.when('/tasks/:id/comments', {
         templateUrl: 'templates/postShow',
         controller: 'PostShowCtrl'
       });
@@ -119,13 +119,13 @@ angular.module('peckbox', ['peckbox.services',
       $locationProvider.html5Mode(true);
     }])
 
-    
+
 
      .config(function($authProvider, $windowProvider) {
       var $window = $windowProvider.$get();
       if ($window.location.host == 'localhost:1337') {
         console.log('development app');
-        $authProvider.facebook({        
+        $authProvider.facebook({
           clientId: '202500220147892',
         });
         $authProvider.google({
@@ -133,12 +133,12 @@ angular.module('peckbox', ['peckbox.services',
         });
       } else {
         console.log('production app');
-        $authProvider.facebook({        
+        $authProvider.facebook({
           clientId: '202500220147892',
         });
         $authProvider.google({
           clientId: '244786553723-b9kn0lleakk061ggih9ji1cihcgsh0a3.apps.googleusercontent.com',
         });
       }
-    
+
     });
