@@ -91,7 +91,7 @@ function success(position) {
     var lat = position.coords.latitude;
     var lon = position.coords.longitude;
     var query = "lat=" + lat + "&lon=" + lon;
-    var url ="https://api.forecast.io/forecast/";
+    var url ="https://api.darksky.net/forecast/";
     var key = "598aeaa830f0e56213a7a3401ab14bf1/";
     $http.jsonp(url + key + lat + "," + lon + "?callback=JSON_CALLBACK").success(function(response){
       $scope.weather = response;
@@ -101,7 +101,7 @@ function success(position) {
                 color: "white",
             }
       };
-      // toastr.info('Current weather is '+ response.currently.summary + ' ' + 'at '+ response.currently.temperature + "°F." + ' ' + response.daily.summary); 
+      // toastr.info('Current weather is '+ response.currently.summary + ' ' + 'at '+ response.currently.temperature + "°F." + ' ' + response.daily.summary);
       // console.log('ApiCtrl', $scope.weather)
     });
   });
