@@ -1,4 +1,4 @@
-# MEAN Auth Seed
+# PECK
 
 ## What's inside
 
@@ -19,7 +19,3 @@
 ## Adding Custom Authorizors (Facebook, Google, etc)
 
 1. Read the [Satellizer](https://github.com/sahat/satellizer) docs on how to add these authorizors.
-
-
-
-# mean-auth-html
