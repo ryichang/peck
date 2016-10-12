@@ -150,7 +150,7 @@ button.toast-close-button {
 }
 .toast-warning {
   /*background-color: #F89406;*/
-  background-color: rgba(230,195,103,1);
+  background-color: rgba(240,205,113,1);
 }
 .toast-progress {
   position: absolute;
