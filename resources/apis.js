@@ -7,7 +7,8 @@ module.exports = function(app) {
 	app.post('/api/sportsnews', function(req,res){
 		console.log('API CALL')
 		var api_key = config.NWT_SECRET;
-		var url ='https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=6c28641ec7424a5fa0ca019acd34ba24' + '&responce-format=.json&callback=JSON_CALLBACK';
+		console.log('api_key is', api_key)
+		var url ='https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=' + api_key + '&responce-format=.json&callback=JSON_CALLBACK';
 		// res.status(200).send("api works");
 		request(url, function(error, response){
 			if (error) {
