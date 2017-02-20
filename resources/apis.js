@@ -8,7 +8,7 @@ module.exports = function(app) {
 		console.log('API CALL')
 		var api_key = config.NWT_SECRET;
 		var url ='https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=' + api_key + '&responce-format=.json&callback=JSON_CALLBACK';
-		// res.status(200).send("api works");
+		res.status(200).send("api works");
 		request(url, function(error, response){
 			if (error) {
 				console.log("error is", error);
