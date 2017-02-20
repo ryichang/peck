@@ -31,11 +31,11 @@ angular.module('peckbox')
 //                     // console.log('news scope is', $scope.news)
 //                 });
 
-  // $http.post('/api/sportsnews').success(function(data){
-  //   console.log('news return is', data);
-  //   $scope.news = data.results;
-  //   console.log("scope news is", $scope.news)
-  // });
+  $http.post('/api/sportsnews').success(function(data){
+    console.log('news return is', data);
+    $scope.news = data.results;
+    console.log("scope news is", $scope.news)
+  });
 
   // $scope.sports={}
   // var sport="https://fantasydata.com/rss/rotoworld/?format=jsonp&callback=JSONP_CALLBACK";
