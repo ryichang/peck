@@ -189,7 +189,7 @@ html, body {
   max-width: 200px;
 }
 
-/*video#bgvid {
+video#bgvid {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -205,7 +205,7 @@ html, body {
     background: url('/img/bg.jpg') no-repeat;
     background-size: cover;
 }
-video { display: block; }*/
+video { display: block; }
 
 .overlay {
     position: absolute;
