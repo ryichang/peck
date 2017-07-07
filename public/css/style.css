@@ -85,9 +85,10 @@ body {
 /*  background: -webkit-linear-gradient(330deg, #17bebb, #f0a6ca);
   background: linear-gradient(120deg, #17bebb, #f0a6ca); */
 /*  background-color: rgba(253,100,103,1);*/
-/*  background-image: url(/img/pattern.gif);*/
+  /*background-image: url(/img/pattern.gif);*/
 /*  background-color: rgba(255,255,255,1);*/
 /*  background-color: rgba(189,197,201,1);*/
+background-image: url(/img/wall2.jpg);
  /* background-color: rgba(150,150,150,1);*/
   background-color: rgba(76,76,76,1);
 /*  background-image: url('https://images.unsplash.com/photo-1440492248262-6895f9da82fc?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=b55bcaa28b217821a149f4d2479a1f59');*/
