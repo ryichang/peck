@@ -217,7 +217,7 @@ video { display: block; }*/
     background-repeat: no-repeat;
     background-position: 50% 50%;
     /*background: rgba(0,0,0,1);*/
-    background: rgba(250,203,202,1);
+    background: rgb(50,46,63);
     /*background: linear-gradient(to right, #5D4157 , #A8CABA);*/
    /* background-image: radial-gradient(circle, #34a4ca 0%, #d0f8ef 70%, #d6f6e1 100%);*/
 /*     background: linear-gradient(to right, #D24335 55%, #6E4CD2);
